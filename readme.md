@@ -47,8 +47,7 @@ Pasta Produção
 
 * 1 - Verificar se já está instalado na máquina o Node.js, Gulp, Ruby, Compass, Git, etc.
 * 2 - Entrar na raiz do projeto pela linha de comando (CMD ou Terminal em modo administrador).
-* 3 - Clonar o projeto com o comando
-	`git clone http://tfscorp.stefanini.com:8080/tfs/ALM/_git/FIESC-BH-Sistema_HSC`
+
 * 4 - Dê os comandos -- `gem install jekyll, npm i, bower i e gulp` no CMD ou Terminal (Serão instaladas as dependências.
 
 ---
