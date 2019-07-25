@@ -1,0 +1,135 @@
+.passo-a-passo {
+    padding-bottom: 60px;
+    position: relative;
+    width: 100%;
+    &:before{
+        content: " ";
+        display: table;
+    }
+    &.passo-1,
+    &.passo-2,
+    &.passo-3, {
+        &:after {
+            @include vertical-gradient(unquote("rgb(#{$color-primary})"), unquote("rgb(#{$palette-grey-500})"));
+            bottom: -8px;
+            content: "";
+            left: 30px;
+            position: absolute;
+            top: 60px;
+            width: 3px;
+        }
+        &.inativo {
+            &:after {
+                background: unquote("rgb(#{$palette-grey-500})");
+            }
+            .indicador-passo {
+                background-color: unquote("rgb(#{$palette-grey-500})");
+            }
+        }
+        &.passado {
+            &:after {
+                background: unquote("rgb(#{$palette-blue-50})");
+            }
+            &.imediato {
+                &:after {
+                    @include vertical-gradient(unquote("rgb(#{$palette-blue-50})"), unquote("rgb(#{$color-primary})"));
+                }
+            }
+            .indicador-passo {
+                background-color: unquote("rgb(#{$palette-blue-50})");
+                line-height: 45px;
+            }
+        }
+    }
+    &.passo-4 {
+        &.inativo {
+            .indicador-passo {
+                background-color: unquote("rgb(#{$palette-grey-500})");
+            }
+        }
+    }
+    // .mdl-grid {
+    //     padding-left: 0;
+    // }
+    // .mdl-cell {
+    //     margin-left: 0;
+    // }
+}
+
+.passo-5 {
+    padding-left: 150px;
+}
+
+.btn-editar {
+    color: rgb(155, 155, 155);
+    font-size: 16px;
+    float: right;
+    text-decoration: none;
+    svg {
+        vertical-align: initial;
+    }
+}
+
+.titulo-passo {
+    color: rgb(74, 74, 74);
+    font-size: 30px;
+    font-weight: 300;
+    left: 150px;
+    line-height: 60px;
+    margin-left: -150px;
+    margin-top: 0;
+    padding-left: 15px;
+    position: relative;
+    top: 0;
+    white-space: nowrap;
+    width: 100%;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        background: rgb(243, 243, 243);
+        content: "";
+        display: block;
+        height: 60px;
+        left: 0;
+        position: absolute;
+        right: -1920px;
+        top: 0;
+        z-index: -1;
+    }
+}
+
+.indicador-passo {
+    background-color: unquote("rgb(#{$color-primary})");
+    border-radius: 30px;
+    color: #fff;
+    font-size: 32px;
+    height: 60px;
+    left: -150px;
+    line-height: 60px;
+    position: absolute;
+    text-align: center;
+    text-indent: 0;
+    top: 0;
+    width: 60px;
+}
+
+// .faixa-titulo {
+// 	background-color: rgb(243, 243, 243);
+// 	height: 60px;
+// 	margin-top: 30px;
+// 	position: relative;
+// 	width: 100%;
+// 	.mdl-grid.mdl-grid--spacing {
+// 		&:before {
+// 			background-color: #fff;
+// 			content: "";
+// 			height: 60px;
+// 			width: 150px;
+// 			position: absolute;
+// 			top: 0;
+// 		}
+// 	}
+// }

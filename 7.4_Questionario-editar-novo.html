@@ -1,0 +1,484 @@
+--- 
+layout: default 
+title: Questionário edição
+permalink: "/questionario-editar-novo/" 
+classes: no-footer
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno">
+				{% include icones/ic-plus.svg width="41" height="30" %}
+				<span>Gerenciador de Usuários</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-empresas.svg width="46" height="34" %}
+				<span>Gerenciador de Empresas</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-perfil-acesso.svg width="55" height="40" %}
+				<span>Perfil de Acesso</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-envio.svg width="40" height="30" %}
+				<span>Envio de E-mails</span>
+			</div>
+			<div class="item-menu-interno ativo">
+				{% include icones/ic-pesquisa.svg width="30" height="30" %}
+				<span>Pesquisas</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid margin-top-20 mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--4-col">
+		<h1>Saúde e Segurança</h1>
+	</div>
+	<div class="mdl-cell mdl-cell--4-offset mdl-cell--1-col mdl-cell--middle text-align-right"> 
+		<i class="material-icons margin-right--30 middle-text gray clear">delete</i>
+	</div>
+	<div class="mdl-cell mdl-cell--1-col mdl-cell--middle text-align-right">
+		<i class="material-icons margin-right-10 middle-text margin-right-15 gray">mode_edit</i>
+	</div>
+	<div class="mdl-cell mdl-cell--2-col mdl-cell--middle text-align-right">
+		<button class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored spaced" data-upgraded=",MaterialButton">
+			Salvar
+		</button>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="panel">
+			<div class="details">
+				<div class="summary">
+					<ul>
+						<li class="header-content-left">Instruções de resposta</li>
+						<li class="text-align-right"><i class="material-icons md-36 middle-text arrow">expand_more</i></li>
+					</ul>
+				</div>
+				<div class="content hide">
+					<form method="post">
+						Conteúdo
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="panel">
+			<div class="details">
+				<div class="summary">
+					<ul>
+						<li class="header-content-left">Características dos funcionários</li>
+						<li>
+							<div class="drop-menu-question">
+								<button id="options-menu-01" class="mdl-button mdl-js-button mdl-button--icon">
+									<i class="material-icons circles">more_vert</i>
+								</button>
+
+								<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="options-menu-01">
+									<li class="mdl-menu__item">Excluir este módulo</li>
+								</ul>
+							</div>
+						</li>
+						<li class="text-align-right"><i class="material-icons md-36 middle-text arrow">expand_more</i></li>
+					</ul>
+				</div>
+				<div class="content hide">
+					<label>Conteúdo</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="panel">
+			<div class="details">
+				<div class="summary">
+					<ul>
+						<li class="header-content-left">SUPORTE ORGANIZACIONAL</li>
+						<li>
+							<div class="drop-menu-question">
+								<button id="options-menu-02" class="mdl-button mdl-js-button mdl-button--icon">
+									<i class="material-icons circles">more_vert</i>
+								</button>
+
+								<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="options-menu-02">
+									<li class="mdl-menu__item">Excluir este módulo</li>
+								</ul>
+							</div>
+						</li>
+						<li class="text-align-right"><i class="material-icons md-36 middle-text arrow">expand_more</i></li>
+					</ul>
+					<ul>
+						<li class="header-content-left-sub">Durante os 12 últimos meses, no seu local de trabalho </li>
+					</ul>
+				</div>
+				<div class="content hide">
+					<label>Conteúdo</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="panel">
+			<div class="details">
+				<div class="summary">
+					<ul>
+						<li class="header-content-left">
+							<div class="mdl-textfield mdl-js-textfield">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<input type="text" class="mdl-textfield__input title-question" placeholder="Inserir o Título do Módulo" value="Tabagismo">
+							</div>
+						</li>
+						<li>
+							<div class="drop-menu-question">
+								<button id="options-menu-03" class="mdl-button mdl-js-button mdl-button--icon">
+									<i class="material-icons circles">more_vert</i>
+								</button>
+
+								<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="options-menu-03">
+									<li class="mdl-menu__item">Excluir este módulo</li>
+								</ul>
+							</div>
+						</li>
+						<li class="text-align-right margin-top--14"><i class="material-icons md-36 middle-text arrow">expand_more</i></li>
+					</ul>
+				</div>
+				<div class="content">
+					
+					<!-- Section Zero -->
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra"></label>
+						<input type="text" class="mdl-textfield__input description-question" placeholder="Inserir descrição do módulo" value="Durante os 12 meses, no seu local de trabalho">
+					</div>
+
+					<hr class="hr-question-full">
+
+					<!-- Section One -->
+					<div class="mdl-grid mdl-grid--spacing container-question margin-top-50">
+						<div class="mdl-cell mdl-cell--8-col border-top-edit-question">
+
+							<div class="head-question text-align-center">
+								{% include icones/ic-grid-circle.svg %}
+								<div class="mdl-textfield mdl-js-textfield margin-top-10">
+									<label class="mdl-textfield__label label-sem-barra"></label>
+									<textarea class="mdl-textfield__input textarea-question" placeholder="Inserir Pergunta" type="text" rows= "4"></textarea>
+								</div>
+							</div>
+
+							<div class="content-question">
+								<!-- Line One -->
+								<div class="mdl-grid mdl-grid--spacing no-padding padding row-question">
+									<div class="mdl-cell mdl-cell--1-col mdl-cell--middle text-align-center margin-0">
+										{% include icones/ic-grid-circle.svg %}
+									</div>
+									<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+										<div class="box-checkbox-medium padding-y4">
+											<div class="mdl-grid mdl-grid--spacing no-padding padding">
+												<div class="mdl-cell mdl-cell--2-col mdl-cell--middle margin-0">
+													<i class="material-icons gray">check_circle</i>
+												</div>
+												<div class="mdl-cell mdl-cell--10-col mdl-cell--middle margin-0">
+													<div class="mdl-textfield mdl-js-textfield margin-left-15">
+														<label class="mdl-textfield__label label-sem-barra"></label>
+														<input type="text" class="mdl-textfield__input description-question" placeholder="Resposta 1">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+										<div class="box-checkbox-medium padding-y4">
+											<div class="mdl-textfield mdl-js-textfield">
+												<label class="mdl-textfield__label label-sem-barra"></label>
+												<input type="text" placeholder="Pontos" class="mdl-textfield__input description-question">
+											</div>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--1-col mdl-cell--middle">
+										<i class="material-icons gray500 center-icon">clear</i>
+									</div>
+									<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+										<div class="mdl-textfield mdl-js-textfield textfield-drop arrow-textfield-type2">
+											<label></label>
+											<input class="mdl-textfield__input box-drop-js" type="text" placeholder="Determina a próxima pergunta">
+										</div>
+										<div class="box-drop">
+											<ul for="estado" class="ul-drop">
+												<li class="">
+													<input class="mdl-textfield__input" type="text" placeholder="Buscar pergunta no módulo">
+												</li>
+												<li class="">
+													<span>Disponibilizou Locais para compra de alim…</span>
+												</li>
+												<li class="">
+													<span>Forneceu informações nutricionais (mais…</span>
+												</li>
+												<li class="">
+													<span>Identificou opções de alimentos e bebidas…</span>
+												</li>
+												<li class="">
+													<span>Subsidiou e forneceu descontos para alim…</span>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+								<!-- Line Two -->
+								<div class="mdl-grid mdl-grid--spacing no-padding padding row-question">
+									<div class="mdl-cell mdl-cell--1-col mdl-cell--middle text-align-center margin-0">
+										{% include icones/ic-grid-circle.svg %}
+									</div>
+									<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+										<div class="box-checkbox-medium padding-y4">
+											<div class="mdl-grid mdl-grid--spacing no-padding padding">
+												<div class="mdl-cell mdl-cell--2-col mdl-cell--middle margin-0">
+													<i class="material-icons gray">check_circle</i>
+												</div>
+												<div class="mdl-cell mdl-cell--10-col mdl-cell--middle margin-0">
+													<div class="mdl-textfield mdl-js-textfield margin-left-15">
+														<label class="mdl-textfield__label label-sem-barra"></label>
+														<input type="text" class="mdl-textfield__input description-question" placeholder="Resposta 2">
+													</div>
+												</div>	
+											</div>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+										<div class="box-checkbox-medium padding-y4">
+											<div class="mdl-textfield mdl-js-textfield">
+												<label class="mdl-textfield__label label-sem-barra"></label>
+												<input type="text" placeholder="Pontos" class="mdl-textfield__input description-question">
+											</div>
+										</div>
+									</div>
+									<div class="mdl-cell mdl-cell--1-col mdl-cell--middle">
+										<i class="material-icons gray500 center-icon">clear</i>
+									</div>
+									<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+										<div class="mdl-textfield mdl-js-textfield textfield-drop arrow-textfield-type2">
+											<label></label>
+											<input class="mdl-textfield__input box-drop-js" type="text" placeholder="Determina a próxima pergunta">
+										</div>
+										<div class="box-drop">
+											<ul for="estado" class="ul-drop">
+												<li class="">
+													<input class="mdl-textfield__input" type="text" placeholder="Buscar pergunta no módulo">
+												</li>
+												<li class="">
+													<span>Disponibilizou Locais para compra de alim…</span>
+												</li>
+												<li class="">
+													<span>Forneceu informações nutricionais (mais…</span>
+												</li>
+												<li class="">
+													<span>Identificou opções de alimentos e bebidas…</span>
+												</li>
+												<li class="">
+													<span>Subsidiou e forneceu descontos para alim…</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<!-- Line Three -->
+								<div class="mdl-grid mdl-grid--spacing no-padding row-question">
+									<div class="mdl-cell mdl-cell--1-offset mdl-cell--10-col">
+										<div class="box-checkbox option-disabled padding-y4 margin-left--16">
+											<i class="material-icons gray">check_circle</i>
+											<div class="mdl-textfield mdl-js-textfield">
+												<label class="mdl-textfield__label label-sem-barra"></label>
+												<input type="text" class="mdl-textfield__input description-question" placeholder="Adicionar outra opção" disabled>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="mdl-cell mdl-cell--4-col text-align-right">
+							<ul class="mdl-list list-question border-edit-question  margin-0">
+								<li class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons">check_box</i>
+										Multipla escolha
+									</span>
+								</li>
+								<li class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons">check_circle</i>
+										Seleção única
+									</span>
+								</li>
+								<li class="mdl-list__item mdl-menu__item--full-bleed-divider">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons">view_stream</i>
+										Múltiplos textos
+									</span>
+								</li>
+								<li class="mdl-list__item">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons">sort</i>
+										Resposta curta
+									</span>
+								</li>
+								<li class="mdl-list__item mdl-menu__item--full-bleed-divider">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons">subject</i>
+										Resposta longa
+									</span>
+								</li>
+								<li class="mdl-list__item mdl-menu__item--full-bleed-divider">
+									<span class="mdl-list__item-primary-content">
+										<i class="material-icons">panorama</i>
+										Inserir imagem
+									</span>
+								</li>
+								<li class="mdl-list__item">
+									<span class="mdl-list__item-primary-content item-yellow ">
+										<i class="material-icons">add_circle</i>
+										Adicionar nova pergunta
+									</span>
+								</li>
+
+							</ul>
+						</div>
+
+						<div class="mdl-cell mdl-cell--10-col border-bottom-edit-question">
+
+							<hr class="hr-question-thin">
+
+							<div class="footer-question">
+								<div class="box-question">
+									<label>Resposta Obrigatória</label>
+									<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-01">
+										<input type="checkbox" id="switch-01" class="mdl-switch__input" checked>
+										<span class="mdl-switch__label"></span>
+									</label>
+								</div>
+
+								<div class="vertical-line margin-x30">
+								</div>
+
+								<div class="box-question">
+									<label>Excluir pergunta</label>
+									<i class="material-icons gray clear">delete</i>
+								</div>
+
+								<div class="vertical-line margin-x30"></div>
+
+								<div class="box-question">
+									<div class="drop-menu-question">
+										<!-- Right aligned menu below button -->
+										<label>Mais opções</label>
+										<button id="options-menu-04" class="mdl-button mdl-js-button mdl-button--icon">
+											<i class="material-icons circles">more_vert</i>
+										</button>
+
+										<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="options-menu-04">
+											<li class="mdl-menu__item""><i class="material-icons done">done</i>Ir para a pergunta com base na resposta</li>
+											<li class="mdl-menu__item"><i class="material-icons done">done</i>Inserir pontuação por pergunta</li>
+											<li class="mdl-menu__item mdl-menu__item--full-bleed-divider"><i class="material-icons done">done</i>Inserir descrição por pergunta</li>
+											<li class="mdl-menu__item"><i class="material-icons image">panorama</i>Inserir uma imagem na pergunta</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Section Three -->
+					<div class="mdl-grid mdl-grid--spacing">
+
+						<div class="mdl-cell mdl-cell--9-col">
+
+							<hr class="hr-question margin-top-40">
+
+							<div class="mdl-textfield mdl-js-textfield">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<textarea class="mdl-textfield__input title-question-black" placeholder="Usou incentivos combinados a outras estratégias, para aumentar a participação em programas de promoção à saúde?" type="text" rows= "6"></textarea>
+							</div>
+							<div class="mdl-textfield mdl-js-textfield">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<textarea class="mdl-textfield__input description-question-black" placeholder="Responda ‘sim’, se, por exemplo, sua organização oferecer incentivos como vales-presentes, dinheiro, folgas remuneradas, descontos em produtos ou serviços, desconto nos planos de saúde, reconhecimento do funcionário, ou prêmios." type="text" rows= "4"></textarea>
+							</div>
+							<div class="mdl-grid mdl-grid--spacing no-padding">
+								<div class="mdl-cell mdl-cell--7-col margin-0">
+									<div class="box-radio margin-top-10">
+										<label class="mdl-radio mdl-js-radio" for="option-1">
+											<input type="radio" id="option-1" class="mdl-radio__button" name="options1" value="1" checked>
+											<span class="mdl-radio__label">Sim <span>(1 ponto)</span></span>
+										</label>
+									</div>
+									<div class="box-radio  margin-top-20">		
+										<label class="mdl-radio mdl-js-radio" for="option-2">
+											<input type="radio" id="option-2" class="mdl-radio__button" name="options1" value="2">
+											<span class="mdl-radio__label">Não <span>(0 ponto)</span></span>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<hr class="hr-question margin-top-40">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="panel">
+			<div class="details">
+				<div class="summary">
+					<ul>
+						<li class="header-content-left">Gestão de Estresse</li>
+						<li>
+							<div class="drop-menu-question">
+								<button id="options-menu-05" class="mdl-button mdl-js-button mdl-button--icon">
+									<i class="material-icons circles">more_vert</i>
+								</button>
+
+								<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="options-menu-05">
+									<li class="mdl-menu__item">Excluir este módulo</li>
+								</ul>
+							</div>
+						</li>
+						<li class="text-align-right"><i class="material-icons md-36 middle-text arrow">expand_more</i></li>
+					</ul>
+					<ul>
+						<li class="header-content-left-sub">Durante os 12 últimos meses, no seu local de trabalho </li>
+					</ul>
+				</div>
+				<div class="content hide">
+					<label>Conteúdo</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing new-module-question">
+<div class="mdl-cell mdl-cell--12-col mdl-cell--middle margin-y20 text-align-center">
+		<i class="material-icons gray">view_agenda</i>
+		<span>Inserir novo módulo de perguntas</span>
+	</div>
+</div>

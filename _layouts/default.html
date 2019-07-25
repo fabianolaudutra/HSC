@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+{% include head.html %}
+
+<body class="{% if page.classes == "/" %}home{% else %}{{page.classes}}{%endif%}">
+	<div class="mdl-layout">
+		{% if page.menu == 'cadastro'%}
+			{% include new-header.html %}
+		{% else %}
+			{% include header.html %}
+		{% endif %}
+
+		<main class="mdl-layout__content">
+			{{ content }}
+			
+			{% include footer.html %}
+		</main>
+		{% include modal.html %}
+	</div>
+	{% include scripts.html %}
+</body>
+
+</html> 

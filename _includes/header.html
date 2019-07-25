@@ -1,0 +1,29 @@
+<header class="mdl-layout__header mdl-layout__header--scroll">
+	<div class="mdl-layout__header-row">
+		{% if page.menu != 'logar'%}
+		<nav class="mdl-navigation flex-column flex-align-left flex-justify-center user-name-section">
+			<small>Bem Vindo!</small>
+			<p>Gustavo Moura</p>
+		</nav>
+		<div class="mdl-layout-spacer"></div>
+		{% endif %}
+		<span class="mdl-layout__title margin-bottom-10">
+			<a href="{{site.baseurl}}" class="logo">
+				{% include svg/logo.svg cor1="#000" cor2="#E6AF00" cor3="#E6AF00" %}
+			</a>
+		</span>
+		<div class="mdl-layout-spacer"></div>
+		<nav class="mdl-navigation">
+			{% if page.menu == 'logar'%}
+			<a href="#" id="btnLogin" onclick="abrirModal(dialogLogin)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+				Login
+			</a>
+			<a href="{{site.baseurl}}cadastro-empresa-01/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored margin-left-20">
+				Cadastro
+			</a> {% else %}
+			<a href="#" onclick="abrirModal(dialogConfirmarLogout)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+				Sair
+			</a> {% endif %}
+		</nav>
+	</div>
+</header>

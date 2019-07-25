@@ -1,0 +1,18 @@
+@mixin font-family($directory, $family, $filename, $weight, $style) {
+    @font-face {
+        font-family: $family;
+        src: url('../fonts/#{$directory}/#{$filename}.woff2') format('woff2'),
+            url('../fonts/#{$directory}/#{$filename}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+
+    }
+}
+
+@mixin vertical-gradient($corTopo, $corBase) {
+    background: $corTopo; /* Old browsers */
+    background: -moz-linear-gradient(top, $corTopo 0%, $corBase 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $corTopo 0%,$corBase 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $corTopo 0%,$corBase 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$corTopo', endColorstr='$corBase',GradientType=0 ); /* IE6-9 */
+}

@@ -1,0 +1,1613 @@
+<div role="dialog" id="dialogLogin" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogLogin)">
+		{% include icones/ic-close.svg %}
+		<!--<img src="{{site.baseurl}}Repositorio/dist/img/icones/ic-close.svg" alt="botão fechar modal">-->
+	</a>
+	<h1 class="logo-dialog">
+		{% include svg/logo.svg cor1="#1D1C1B" cor2="#E6AF00" cor3="#E6AF00" width="250" %}
+		<!--<img src="{{site.baseurl}}Repositorio/dist/img/logo.svg" width="270" alt="logo">-->
+	</h1>
+	<div class="dialog-login">
+		<h4 class="mdl-dialog__title title-dialog">bem vindo. faça seu login.</h4>
+		<div class="mdl-dialog__content">
+			<form name="login-form" class="login-form-dialog" onsubmit="return false;">
+				<div class="mdl-grid margin-top-10">
+					<div class="mdl-cell mdl-cell--12-col">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label" for="email_login">E-mail</label>
+							<input class="mdl-textfield__input" type="email" id="email_login">
+						</div>
+					</div>
+				</div>
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label" for="password_login">Senha</label>
+							<input class="mdl-textfield__input" type="password" id="password_login">
+						</div>
+					</div>
+				</div>
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--12-col">
+						<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored padding-x20">
+							Entrar 
+							{% include icones/ic-arrow-right.svg %}
+							<!--<img src="{{site.baseurl}}Repositorio/dist/img/icones/ic-arrow-right.svg" alt="">-->
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="mdl-dialog__actions">
+			<button type="button" class="mdl-button" onclick="modalRecuperarSenha();">Esqueci minha senha</button>
+			<button type="button" class="mdl-button">Quero me cadastrar</button>
+		</div>
+	</div> 
+	<div class="dialog-esqueci-senha hide">
+		<h4 class="mdl-dialog__title title-dialog">Esqueci minha senha</h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Insira seu email para que seja criada uma nova senha</h5>
+		<div class="mdl-dialog__content">
+			<form name="recuperar-senha-form" class="recuperar-senha-form-dialog" onsubmit="return false;">
+				<div>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label" for="email_recuperar">E-mail</label>
+						<input class="mdl-textfield__input" type="email_recuperar" id="email_recuperar">
+					</div>
+				</div>
+				<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="enviarRecuperacaoSenha()">
+					Recuperar Senha 
+					{% include icones/ic-arrow-right.svg %}
+				</button>
+			</form>
+		</div>
+		<div class="mdl-dialog__actions">
+			<button type="button" class="mdl-button" onclick="modalLogin()">Entrar</button>
+			<button type="button" class="mdl-button">Quero me cadastrar</button>
+		</div>
+	</div>
+	<div class="dialog-esqueci-senha-enviado hide">
+		<h4 class="mdl-dialog__title title-dialog">A recuperação de senha foi enviada para o seu e-mail cadastrado.</h4>
+		<div class="mdl-dialog__content">
+			<div class="senha-recuperada">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" onclick="modalLogin()">
+					Voltar para ínicio 
+					{% include icones/ic-arrow-right.svg %}
+					<!--<img src="{{site.baseurl}}Repositorio/dist/img/icones/ic-arrow-right.svg" alt="">-->
+				</button>
+			</div>
+		</div>
+		<div class="mdl-dialog__actions">
+			<button type="button" class="mdl-button" onclick="modalLogin()">Entrar</button>
+			<button type="button" class="mdl-button">Quero me cadastrar</button>
+		</div>
+	</div>
+</div>
+
+<div role="dialog" id="dialogNovoUsuario" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogNovoUsuario)">
+		{% include icones/ic-close.svg %}
+		<!--<img src="{{site.baseurl}}Repositorio/dist/img/icones/ic-close.svg" alt="botão fechar modal">-->
+	</a>
+	<div class="dialog-novo-usuario">
+		<h4 class="mdl-dialog__title title-dialog">Criação de novo <span>Usuário</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="login-form" onsubmit="return false;">
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield padding-top-0">
+						<label class="mdl-textfield__label label-sem-barra" for="nome_novo_user">Nome</label>
+						<input class="mdl-textfield__input" type="text" id="nome_novo_user" placeholder="Digite o Nome do Usuário">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--8-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth padding-top-0">
+						<label for="perfil_novo_user" class="mdl-textfield__label label-sem-barra">Perfil</label>
+						<input class="mdl-textfield__input" type="text" id="perfil_novo_user" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="perfil_novo_user" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Empresa X</li>
+							<li class="mdl-menu__item">Empresa Y</li>
+							<li class="mdl-menu__item">Empresa Z</li>
+						</ul>	
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--8-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth padding-top-0">
+						<label for="empresa_novo_user" class="mdl-textfield__label label-sem-barra">Empresa</label>
+						<input class="mdl-textfield__input" type="text" id="empresa_novo_user" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="empresa_novo_user" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Empresa X</li>
+							<li class="mdl-menu__item">Empresa Y</li>
+							<li class="mdl-menu__item">Empresa Z</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col margin-0">
+					<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-adicionar-empresa margin-bottom-15">
+						Adicionar mais Empresas
+					</button>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="email_novo_user">E-mail</label>
+						<input class="mdl-textfield__input" type="email" id="email_novo_user" placeholder="Digite o E-mail do Usuário">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-usuario">
+						Criar Usuário
+					</button>
+				</div>
+			</form>
+
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogEditarUsuario" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogEditarUsuario)">
+		{% include icones/ic-close.svg %}
+		<!--<img src="{{site.baseurl}}Repositorio/dist/img/icones/ic-close.svg" alt="botão fechar modal">-->
+	</a>
+	<div class="dialog-editar-usuario">
+		<h4 class="mdl-dialog__title title-dialog">Edição de <span>Usuário</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="login-form" onsubmit="return false;">
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield padding-top-0">
+						<label class="mdl-textfield__label label-sem-barra" for="nome_novo_user">Nome</label>
+						<input class="mdl-textfield__input" type="text" id="nome_user" placeholder="Digite o Nome do Usuário">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--8-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth padding-top-0">
+						<label for="perfil_user" class="mdl-textfield__label label-sem-barra">Perfil</label>
+						<input class="mdl-textfield__input" type="text" id="perfil_user" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="perfil_user" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Empresa X</li>
+							<li class="mdl-menu__item">Empresa Y</li>
+							<li class="mdl-menu__item">Empresa Z</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--8-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth padding-top-0">
+						<label for="empresa_user" class="mdl-textfield__label label-sem-barra">Empresa</label>
+						<input class="mdl-textfield__input" type="text" id="empresa_user" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="empresa_user" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Empresa X</li>
+							<li class="mdl-menu__item">Empresa Y</li>
+							<li class="mdl-menu__item">Empresa Z</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col margin-0">
+					<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-adicionar-empresa margin-bottom-15">
+						Adicionar mais Empresas
+					</button>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="email_user">E-mail</label>
+						<input class="mdl-textfield__input" type="email" id="email_user" placeholder="Digite o E-mail do Usuário">
+					</div>
+				</div>
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-0">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-inativar" type="submit" href="#">Inativar usuário</button>
+						<!--<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-ativar" type="submit" href="#">Ativar usuário</button>-->
+					</div>
+					<div class="mdl-cell mdl-cell--6-col">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-excluir" type="submit" href="#">Excluir usuário</button>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-usuario">
+						Editar Usuário
+					</button>
+				</div>
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarNovoUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog"><span>Usuário</span> cadastrado com sucesso!</h4>
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<button type="" onclick="fecharModal(dialogConfirmarNovoUsuario)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-usuario">
+				Finalizar
+			</button>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarEdicaoUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog"><span>Usuário</span> editado com sucesso!</h4>
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<button type="" onclick="fecharModal(dialogConfirmarEdicaoUsuario)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-usuario">
+				Finalizar
+			</button>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarAtivadoUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog"><span>Usuário</span> ativado com sucesso!</h4>
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<button type="" onclick="fecharModal(dialogConfirmarAtivadoUsuario)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-usuario">
+				Finalizar
+			</button>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarInativadoUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog"><span>Usuário</span> inativado com sucesso!</h4>
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<button type="" onclick="fecharModal(dialogConfirmarInativadoUsuario)" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-usuario">
+				Finalizar
+			</button>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogNaoPossivelExcluirUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog">Este <span>Usuário</span> está atrelado a outro serviços e não pode ser deletado. Caso necessário, sugerimos que ele seja inativado</h4>
+		<div class="mdl-grid no-padding">
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-confirmar" type="submit" href="#">Voltar</button>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-cancelar" type="submit" href="#">Inativar Usuario</button>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarAtivarUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog">Deseja realmente ativar este <span>Usuário</span>?</h4>
+		<div class="mdl-grid no-padding">
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-confirmar" type="submit" href="#">Sim</button>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-cancelar" type="submit" href="#">Não</button>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarExcluirUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog">Deseja realmente excluir este <span>Usuário</span>?</h4>
+		<div class="mdl-grid no-padding">
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-confirmar" type="submit" href="#">Sim</button>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-cancelar" type="submit" href="#">Não</button>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarInativarUsuario" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog">Deseja realmente inativar este <span>Usuário</span>?</h4>
+		<div class="mdl-grid no-padding">
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-confirmar" type="submit" href="#">Sim</button>
+			</div>
+			<div class="mdl-cell mdl-cell--6-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-cancelar" type="submit" href="#">Não</button>
+			</div>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogNovoPerfil" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogNovoPerfil)">
+		{% include icones/ic-close.svg %}
+	</a>
+	<div class="dialog-novo-perfil">
+		<h4 class="mdl-dialog__title title-dialog">Criação de novo <span>Perfil</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="login-form" onsubmit="return false;">
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield padding-top-0">
+						<label class="mdl-textfield__label label-sem-barra" for="nome_novo_perfil">Nome do perfil</label>
+						<input class="mdl-textfield__input" type="text" id="nome_novo_perfil" placeholder="Digite o Nome do Perfil">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col margin-x0 margin-top-10">
+					<label class="mdl-textfield__label label-sem-barra">Selecione os módulos de acesso do perfil</label>
+				</div>
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-0">
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-1">
+							<input type="checkbox" id="checkbox-1"  class="mdl-checkbox__input" checked>
+							<span class="mdl-checkbox__label">Cadastro de usuário</span>
+						</label>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-2">
+							<input type="checkbox" id="checkbox-2"  class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Cadastro de perfil de acesso</span>
+						</label>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-3">
+							<input type="checkbox" id="checkbox-3"  class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Envio de e-mails</span>
+						</label>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-4">
+							<input type="checkbox" id="checkbox-4"  class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Relatórios (Visão Administrativa)</span>
+						</label>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col margin-0">
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-5">
+							<input type="checkbox" id="checkbox-5"  class="mdl-checkbox__input" checked>
+							<span class="mdl-checkbox__label">Cadastro de empresa</span>
+						</label>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-6">
+							<input type="checkbox" id="checkbox-6"  class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Campanhas</span>
+						</label>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-7">
+							<input type="checkbox" id="checkbox-7"  class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Espaço de usuário (Empresa)</span>
+						</label>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-8">
+							<input type="checkbox" id="checkbox-8"  class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Dashboards (Visão Executiva)</span>
+						</label>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--12-col margin-top-30 padding-x50">
+					<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-perfil">
+						Criar Perfil
+					</button>
+				</div>
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogEditarPerfil" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogEditarPerfil)">
+		{% include icones/ic-close.svg %}
+	</a>
+	<div class="dialog-novo-perfil">
+		<h4 class="mdl-dialog__title title-dialog">Editar <span>Perfil</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="login-form" onsubmit="return false;">
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-textfield mdl-js-textfield padding-top-0">
+						<label class="mdl-textfield__label label-sem-barra" for="nome_novo_perfil">Nome do perfil</label>
+						<input class="mdl-textfield__input" type="text" id="nome_novo_perfil" placeholder="Digite o Nome do Perfil">
+					</div>
+				</div>
+
+				<div class="mdl-cell mdl-cell--12-col margin-x0 margin-top-10">
+					<label class="mdl-textfield__label label-sem-barra">Selecione os módulos de acesso do perfil</label>
+				</div>
+
+				<div class="mdl-cell mdl-cell--12-col margin-0">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-0">
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-1-edit">
+								<input type="checkbox" id="checkbox-1-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Cadastro de usuário</span>
+							</label>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-2-edit">
+								<input type="checkbox" id="checkbox-2-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Cadastro de perfil de acesso</span>
+							</label>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-3-edit">
+								<input type="checkbox" id="checkbox-3-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Envio de e-mails</span>
+							</label>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-4-edit">
+								<input type="checkbox" id="checkbox-4-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Relatórios (Visão Administrativa)</span>
+							</label>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-0">
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-5-edit">
+								<input type="checkbox" id="checkbox-5-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Cadastro de empresa</span>
+							</label>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-6-edit">
+								<input type="checkbox" id="checkbox-6-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Campanhas</span>
+							</label>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-7-edit">
+								<input type="checkbox" id="checkbox-7-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Espaço de usuário (Empresa)</span>
+							</label>
+							<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkbox-8-edit">
+								<input type="checkbox" id="checkbox-8-edit"  class="mdl-checkbox__input">
+								<span class="mdl-checkbox__label">Dashboards (Visão Executiva)</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid padding-x50 margin-top-30">
+					<div class="mdl-cell mdl-cell--6-col">
+						<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-inativar-usuario">
+							Inativar Usuário
+						</button>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col">
+						<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-excluir-usuario">
+							Excluir Usuário
+						</button>
+					</div>
+				</div>
+
+				<div class="mdl-cell mdl-cell--12-col margin-top-20 padding-x50">
+					<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-perfil">
+						Criar Perfil
+					</button>
+				</div>
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogNovaPesquisa" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogNovaPesquisa)">
+		{% include icones/ic-close.svg %}
+	</a>
+	<div class="dialog-novo-perfil">
+		<h4 class="mdl-dialog__title title-dialog">Cadastro de <span>Pesquisa</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="nova-pesquisa-form" onsubmit="return false;">
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--12-col margin-0">
+						<div class="mdl-textfield mdl-js-textfield padding">
+							<label class="mdl-textfield__label label-sem-barra" for="pesquisa_nome">Nome da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="pesquisa_nome" placeholder="Digite o Nome da Pesquisa">
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-left-0">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="inicio_pesquisa">Início da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="inicio_pesquisa" placeholder="dd/mm/aaaa">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col margin-right-0">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="fim_pesquisa">Fim da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="fim_pesquisa" placeholder="dd/mm/aaaa">
+						</div>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="check-data-termino">
+							<input type="checkbox" id="check-data-termino" class="mdl-checkbox__input">
+							<span class="mdl-checkbox__label">Sem data para término</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-left-0">
+						<label class="mdl-radio mdl-js-radio" for="rbt-pesquisa-01">
+							<input type="radio" id="rbt-pesquisa-01" class="mdl-radio__button" name="rbt-pesquisa" value="1">
+							<span class="mdl-radio__label radio-label-strong">Pesquisa nacional</span>
+						</label>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col margin-right-0">
+						<label class="mdl-radio mdl-js-radio" for="rbt-pesquisa-02">
+							<input type="radio" id="rbt-pesquisa-02" class="mdl-radio__button" name="rbt-pesquisa" value="2">
+							<span class="mdl-radio__label radio-label-strong">Segmentar pesquisa</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="segment-search hide">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-left-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="segmento-pesquisa-novo">Segmento</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="segmento-pesquisa-novo" placeholder="Selecionar Segmentos">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-pesquisa-novo-01">
+											<input type="checkbox" id="checkdrop-segmento-pesquisa-novo-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Mineração</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-pesquisa-novo-02">
+											<input type="checkbox" id="checkdrop-segmento-pesquisa-novo-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Agronegócio</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-pesquisa-novo-03">
+											<input type="checkbox" id="checkdrop-segmento-pesquisa-novo-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Indústria</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-right-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="porte-pesquisa-novo">Porte</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="porte-pesquisa-novo" placeholder="Selecionar Porte">
+							</div>
+							<div class="box-drop">
+								<ul for="municipio" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-pesquisa-novo-01">
+											<input type="checkbox" id="checkdrop-porte-pesquisa-novo-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Grande</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-pesquisa-novo-02">
+											<input type="checkbox" id="checkdrop-porte-pesquisa-novo-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Médio</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-pesquisa-novo-03">
+											<input type="checkbox" id="checkdrop-porte-pesquisa-novo-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Pequeno</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-left-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="regiao-pesquisa-novo">Região</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="regiao-pesquisa-novo" placeholder="Selecionar Regiões">
+							</div>
+							<div class="box-drop">
+								<ul for="estado" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-pesquisa-novo-01">
+											<input type="checkbox" id="checkdrop-regiao-pesquisa-novo-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Norte</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-pesquisa-novo-02">
+											<input type="checkbox" id="checkdrop-regiao-pesquisa-novo-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Nordeste</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regisao-pesquisa-novo-03">
+											<input type="checkbox" id="checkdrop-regisao-pesquisa-novo-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Sudeste</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-right-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="estado-pesquisa-novo">Estado</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="estado-pesquisa-novo" placeholder="Selecionar Estados">
+							</div>
+							<div class="box-drop">
+								<ul for="estado" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-pesquisa-novo-01">
+											<input type="checkbox" id="checkdrop-estado-pesquisa-novo-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">MG</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-pesquisa-novo-02">
+											<input type="checkbox" id="checkdrop-estado-pesquisa-novo-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">RJ</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-pesquisa-novo-03">
+											<input type="checkbox" id="checkdrop-estado-pesquisa-novo-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">PR</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-left-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="mesoregiao-pesquisa-novo">Mesoregiao</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="mesoregiao-pesquisa-novo" placeholder="Selecionar Mesoregiao">
+							</div>
+							<div class="box-drop">
+								<ul for="estado" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-pesquisa-novo-01">
+											<input type="checkbox" id="checkdrop-mesoregiao-pesquisa-novo-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Noroesre de minas</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-pesquisa-novo-02">
+											<input type="checkbox" id="checkdrop-mesoregiao-pesquisa-novo-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Oeste de minas</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-pesquisa-novo-03">
+											<input type="checkbox" id="checkdrop-mesoregiao-pesquisa-novo-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Norte de minas</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-right-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="municipio-pesquisa-novo">Município</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="municipio-pesquisa-novo" placeholder="Selecionar Cidade">
+							</div>
+							<div class="box-drop">
+								<ul for="municipio" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-pesquisa-novo-01">
+											<input type="checkbox" id="checkdrop-municipio-pesquisa-novo-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Belo Horizonte</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-pesquisa-novo-02">
+											<input type="checkbox" id="checkdrop-municipio-pesquisa-novo-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Betim</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-pesquisa-novo-03">
+											<input type="checkbox" id="checkdrop-municipio-pesquisa-novo-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Contagem</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding padding-x50">
+					<div class="mdl-cell mdl-cell--12-col margin-top-20">
+						<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-criar-pesquisa">
+							Cadastrar Pesquisa
+						</button>
+					</div>
+				</div>
+				
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogEdicaoPesquisa" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogEdicaoPesquisa)">
+		{% include icones/ic-close.svg %}
+	</a>
+	<div class="dialog-novo-perfil">
+		<h4 class="mdl-dialog__title title-dialog">Edição de <span>Pesquisa</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="editar-pesquisa-form" onsubmit="return false;">
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--12-col margin-0">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="pesquisa_nome_edit">Nome da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="pesquisa_nome_edit" placeholder="Digite o Nome da Pesquisa">
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-left-0">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="inicio_pesquisa_edit">Início da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="inicio_pesquisa_edit" placeholder="dd/mm/aa">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col margin-right-0">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="fim_pesquisa_edit">Fim da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="fim_pesquisa_edit" placeholder="dd/mm/aa">
+						</div>
+						<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="check-data-termino_edit">
+							<input type="checkbox" id="check-data-termino_edit" class="mdl-checkbox__input" value="1">
+							<span class="mdl-checkbox__label">Sem data para término</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-left-0">
+						<label class="mdl-radio mdl-js-radio" for="rbt-pesquisa-edit-01">
+							<input type="radio" id="rbt-pesquisa-edit-01" class="mdl-radio__button" name="rbt-pesquisa-edit" value="1">
+							<span class="mdl-radio__label radio-label-strong">Pesquisa nacional</span>
+						</label>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col margin-right-0">
+						<label class="mdl-radio mdl-js-radio" for="rbt-pesquisa-edit-02">
+							<input type="radio" id="rbt-pesquisa-edit-02" class="mdl-radio__button" name="rbt-pesquisa-edit" value="2">
+							<span class="mdl-radio__label radio-label-strong">Segmentar pesquisa</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="segment-search-edit hide">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-left-0">
+
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="segmento_pesquisa_editar">Segmento</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="segmento_pesquisa_editar" placeholder="Selecionar Segmentos">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-pesquisa-editar-01">
+											<input type="checkbox" id="checkdrop-segmento-pesquisa-editar-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Mineração</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-pesquisa-editar-02">
+											<input type="checkbox" id="checkdrop-segmento-pesquisa-editar-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Agronegócio</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-pesquisa-editar-03">
+											<input type="checkbox" id="checkdrop-segmento-pesquisa-editar-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Indústria</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-right-0">
+
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="porte-pesquisa-editar">Porte</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="porte-pesquisa-editar" placeholder="Selecionar Porte">
+							</div>
+							<div class="box-drop">
+								<ul for="municipio" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-pesquisa-editar-01">
+											<input type="checkbox" id="checkdrop-porte-pesquisa-editar-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Grande</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-pesquisa-editar-02">
+											<input type="checkbox" id="checkdrop-porte-pesquisa-editar-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Médio</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-pesquisa-editar-03">
+											<input type="checkbox" id="checkdrop-porte-pesquisa-editar-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Pequeno</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-left-0">
+
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="regiao-pesquisa-editar">Região</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="regiao-pesquisa-editar" placeholder="Selecionar Regiões">
+							</div>
+							<div class="box-drop">
+								<ul for="estado" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-pesquisa-editar-01">
+											<input type="checkbox" id="checkdrop-regiao-pesquisa-editar-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Norte</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-pesquisa-editar-02">
+											<input type="checkbox" id="checkdrop-regiao-pesquisa-editar-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Nordeste</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regisao-pesquisa-editar-03">
+											<input type="checkbox" id="checkdrop-regisao-pesquisa-editar-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Sudeste</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-right-0">
+
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="estado-pesquisa-editar">Estado</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="estado-pesquisa-editar" placeholder="Selecionar Estados">
+							</div>
+							<div class="box-drop">
+								<ul for="estado" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-pesquisa-editar-01">
+											<input type="checkbox" id="checkdrop-estado-pesquisa-editar-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">MG</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-pesquisa-editar-02">
+											<input type="checkbox" id="checkdrop-estado-pesquisa-editar-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">RJ</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-pesquisa-editar-03">
+											<input type="checkbox" id="checkdrop-estado-pesquisa-editar-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">PR</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--6-col margin-left-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="mesoregiao-pesquisa-editar">Mesoregião</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="mesoregiao-pesquisa-editar" placeholder="Selecionar Mesoregiao">
+							</div>
+							<div class="box-drop">
+								<ul for="estado" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-pesquisa-editar-01">
+											<input type="checkbox" id="checkdrop-mesoregiao-pesquisa-editar-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Noroesre de minas</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-pesquisa-editar-02">
+											<input type="checkbox" id="checkdrop-mesoregiao-pesquisa-editar-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Oeste de minas</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-pesquisa-editar-03">
+											<input type="checkbox" id="checkdrop-mesoregiao-pesquisa-editar-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Norte de minas</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--6-col margin-right-0">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="municipio-pesquisa-editar">Município</label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="municipio-pesquisa-editar" placeholder="Selecionar Cidade">
+							</div>
+							<div class="box-drop">
+								<ul for="municipio" class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-pesquisa-editar-01">
+											<input type="checkbox" id="checkdrop-municipio-pesquisa-editar-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Belo Horizonte</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-pesquisa-editar-02">
+											<input type="checkbox" id="checkdrop-municipio-pesquisa-editar-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Betim</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-pesquisa-editar-03">
+											<input type="checkbox" id="checkdrop-municipio-pesquisa-editar-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Contagem</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="mdl-grid padding-x50">
+					<div class="mdl-cell mdl-cell--6-col">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-inativar" type="submit" href="#">Inativar pesquisa</button>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-excluir" type="submit" href="#">Excluir pesquisa</button>
+					</div>
+				</div>
+
+				<div class="mdl-grid padding-x50">
+					<div class="mdl-cell mdl-cell--12-col margin-top-20">
+						<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-salvar-pesquisa">
+							Salvar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogNovaEmpresa" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogNovaEmpresa)">
+		{% include icones/ic-close.svg %}
+	</a>
+	<div class="dialog-nova-empresa">
+		<h4 class="mdl-dialog__title title-dialog">Cadastro de <span>Empresa</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="nova-empresa-form" onsubmit="return false;">
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--8-col">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-razao-social-nova">Razão social</label>
+							<input class="mdl-textfield__input" type="email" id="empresa-razao-social-nova" placeholder="Digite a razão social">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_cnpj_nova">Cnpj</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_cnpj_nova" placeholder="Digite o CNPJ">
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--5-col">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-razao-social-nova">Nome fantasia</label>
+							<input class="mdl-textfield__input" type="email" id="empresa-razao-social-nova" placeholder="Diite o nome fantasia">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--3-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-porte-nova">Porte</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="empresa-porte-nova" placeholder="Selecione o Porte">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-nova-01">
+										<input type="checkbox" id="checkdrop-porte-empresa-nova-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Grande</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-nova-02">
+										<input type="checkbox" id="checkdrop-porte-empresa-nova-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Médio</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-nova-03">
+										<input type="checkbox" id="checkdrop-porte-empresa-nova-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Pequeno</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-porte-nova">Setor</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="empresa-setor-nova" placeholder="Selecione o Setor">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-setor-empresa-nova-01">
+										<input type="checkbox" id="checkdrop-setor-empresa-nova-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">A</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-setor-empresa-nova-02">
+										<input type="checkbox" id="checkdrop-setor-empresa-nova-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">B</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-setor-empresa-nova-03">
+										<input type="checkbox" id="checkdrop-setor-empresa-nova-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">C</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="estado-empresa-nova">Estado</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="estado-empresa-nova" placeholder="Selecionar Estados">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-nova-01">
+										<input type="checkbox" id="checkdrop-estado-empresa-nova-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">MG</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-nova-02">
+										<input type="checkbox" id="checkdrop-estado-empresa-nova-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">RJ</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-nova-03">
+										<input type="checkbox" id="checkdrop-estado-empresa-nova-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">PR</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="municipio-empresa-nova">Município</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="municipio-empresa-nova" placeholder="Selecionar Cidade">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-nova-01">
+										<input type="checkbox" id="checkdrop-municipio-empresa-nova-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Belo Horizonte</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-nova-02">
+										<input type="checkbox" id="checkdrop-municipio-empresa-nova-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Betim</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-nova-03">
+										<input type="checkbox" id="checkdrop-municipio-empresa-nova-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Contagem</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding margin-top-20">
+					<div class="mdl-cell mdl-cell--5-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_nomecontato_nova">Nome do contato</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_nomecontato_nova" placeholder="Nome do contato">
+						</div>
+
+					</div>
+					<div class="mdl-cell mdl-cell--3-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_cargo_nova">Cargo</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_carg_nova" placeholder="Cargo">
+						</div>
+						
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_funcao_nova">Função</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_funcao_nova" placeholder="Função">
+						</div>	
+
+					</div>
+				</div>
+
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_telefone_nova">Telefone</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_telefone_nova" placeholder="Digite o Telefone">
+						</div>
+
+					</div>
+					<div class="mdl-cell mdl-cell--5-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_telefone_nova">E-mail</label>
+							<input class="mdl-textfield__input" type="email" id="empresa_telefone_nova" placeholder="Digite o E-mail">
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--12-col margin-top-20 margin-left-0">
+						<button type="" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-salvar-empresa">
+							Cadastrar empresa
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogEdicaoEmpresa" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogEdicaoEmpresa)">
+		{% include icones/ic-close.svg %}
+	</a>
+	<div class="dialog-nova-empresa">
+		<h4 class="mdl-dialog__title title-dialog">Edição de <span>Empresa</span></h4>
+		<h5 class="mdl-dialog__subtitle subtitle-dialog">Preencha todos os campos abaixo:</h5>
+		<div class="mdl-dialog__content">
+			<form name="editar-empresa-form" onsubmit="return false;">
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--8-col">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-razao-social-edicao">Razão social</label>
+							<input class="mdl-textfield__input" type="email" id="empresa-razao-social-edicao" placeholder="Digite a razão social">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_cnpj_edicao">Cnpj</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_cnpj_edicao" placeholder="Digite o CNPJ">
+						</div>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--5-col">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-razao-social-edicao">Nome fantasia</label>
+							<input class="mdl-textfield__input" type="email" id="empresa-razao-social-edicao" placeholder="Digite o nome fantasia">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--3-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-porte-edicao">Porte</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="empresa-porte-edicao" placeholder="Selecione o Porte">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-edicao-01">
+										<input type="checkbox" id="checkdrop-porte-empresa-edicao-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Grande</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-edicao-02">
+										<input type="checkbox" id="checkdrop-porte-empresa-edicao-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Médio</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-edicao-03">
+										<input type="checkbox" id="checkdrop-porte-empresa-edicao-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Pequeno</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa-porte-edicao">Setor</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="empresa-setor-edicao" placeholder="Selecione o Setor">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-setor-empresa-edicao-01">
+										<input type="checkbox" id="checkdrop-setor-empresa-edicao-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">A</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-setor-empresa-edicao-02">
+										<input type="checkbox" id="checkdrop-setor-empresa-edicao-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">B</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-setor-empresa-edicao-03">
+										<input type="checkbox" id="checkdrop-setor-empresa-edicao-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">C</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="regiao-empresa-edicao">Região</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="regiao-empresa-edicao" placeholder="Selecionar Regiões">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-empresa-edicao-01">
+										<input type="checkbox" id="checkdrop-regiao-empresa-edicao-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Norte</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-empresa-edicao-02">
+										<input type="checkbox" id="checkdrop-regiao-empresa-edicao-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Nordeste</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regisao-empresa-edicao-03">
+										<input type="checkbox" id="checkdrop-regisao-empresa-edicao-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Sudeste</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="estado-empresa-edicao">Estado</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="estado-empresa-edicao" placeholder="Selecionar Estados">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-edicao-01">
+										<input type="checkbox" id="checkdrop-estado-empresa-edicao-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">MG</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-edicao-02">
+										<input type="checkbox" id="checkdrop-estado-empresa-edicao-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">RJ</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-edicao-03">
+										<input type="checkbox" id="checkdrop-estado-empresa-edicao-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">PR</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="mesoregiao-empresa-edicao">Mesorregiao</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="mesoregiao-empresa-edicao" placeholder="Digite a Mesorregiao">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-empresa-edicao-01">
+										<input type="checkbox" id="checkdrop-mesoregiao-empresa-edicao-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Noroesre de minas</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-empresa-edicao-02">
+										<input type="checkbox" id="checkdrop-mesoregiao-empresa-edicao-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Oeste de minas</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-empresa-edicao-03">
+										<input type="checkbox" id="checkdrop-mesoregiao-empresa-edicao-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Norte de minas</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="municipio-empresa-edicao">Município</label>
+							<input class="mdl-textfield__input box-drop-js" type="text" id="municipio-empresa-edicao" placeholder="Selecionar Cidade">
+						</div>
+						<div class="box-drop">
+							<ul class="ul-drop">
+								<li class="">
+									<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-edicao-01">
+										<input type="checkbox" id="checkdrop-municipio-empresa-edicao-01"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Belo Horizonte</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-edicao-02">
+										<input type="checkbox" id="checkdrop-municipio-empresa-edicao-02"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Betim</span>
+									</label>
+								</li>
+								<li class="">
+									<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-edicao-03">
+										<input type="checkbox" id="checkdrop-municipio-empresa-edicao-03"  class="mdl-checkbox__input">
+										<span class="mdl-checkbox__label">Contagem</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding margin-top-20">
+					<div class="mdl-cell mdl-cell--5-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_nomecontato_edicao">Nome do contato</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_nomecontato_edicao" placeholder="Nome do contato">
+						</div>
+
+					</div>
+					<div class="mdl-cell mdl-cell--3-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_cargo_edicao">Cargo</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_carg_edicao" placeholder="Cargo">
+						</div>
+						
+					</div>
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_funcao_edicao">Função</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_funcao_edicao" placeholder="Função">
+						</div>	
+
+					</div>
+				</div>
+
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--4-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_telefone_edicao">Telefone</label>
+							<input class="mdl-textfield__input" type="text" id="empresa_telefone_edicao" placeholder="Digite o Telefone">
+						</div>
+
+					</div>
+					<div class="mdl-cell mdl-cell--5-col">
+						<div class="mdl-textfield mdl-js-textfield padding-top-0">
+							<label class="mdl-textfield__label label-sem-barra" for="empresa_telefone_edicao">E-mail</label>
+							<input class="mdl-textfield__input" type="email" id="empresa_telefone_edicao" placeholder="Digite o E-mail">
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding margin-top-30">
+					<div class="mdl-cell mdl-cell--3-offset mdl-cell--3-col">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-inativar" type="submit" href="#">Inativar empresa</button>
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-ativar hide" type="submit" href="#">Ativar empresa</button>
+					</div>
+					<div class="mdl-cell mdl-cell--3-col">
+						<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-excluir" type="submit" href="#">Excluir empresa</button>
+					</div>
+				</div>
+
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--3-offset mdl-cell--6-col margin-top-20">
+						<button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-salvar-empresa">
+							Salvar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogImage" hidden>
+	<a class="close-dialog" onclick="fecharModal(dialogImage)">
+		{% include icones/ic-close.svg %}
+		<!--<img src="{{site.baseurl}}Repositorio/dist/img/icones/ic-close.svg" alt="botão fechar modal">-->
+	</a>
+	<div class="dialog-image">
+		<div class="mdl-dialog__content">
+			<form name="image-form" class="image-form-dialog" onsubmit="return false;">
+				
+				<button type="file" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+					Escolha uma imagem para fazer upload
+				</button>
+
+			</form>
+		</div>
+	</div> 
+</div>
+
+<div role="dialog" id="dialogConfirmarLogout" class="center_modal" hidden>
+	<div class="dialog-confirmacao">
+		<h4 class="mdl-dialog__title title-dialog">Deseja realmente <span>Sair</span>?</h4>
+		<div class="mdl-grid no-padding margin-top-10">
+			<div class="mdl-cell mdl-cell--5-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-confirmar" type="submit"
+				ng-click="deslogar()">Sim</button>
+			</div>
+			<div class="mdl-cell mdl-cell--5-col">
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored button-cancelar" type="submit"
+				onclick="fecharModal(dialogConfirmarLogout)">Cancelar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div role="dialog" id="dialogExport" class="center_modal" hidden>
+	<div class="dialog-export">
+
+		<div class="card-export">
+			<div class="card-export-header">
+				<span> BOARDS SELECIONADOS</span>
+				<i class="material-icons close" onclick="fecharModal(dialogExport)">remove</i>
+			</div>
+			<div class="card-export-body">
+				<!-- Deletable Chip -->
+				<span class="mdl-chip mdl-chip--deletable">
+					<span class="mdl-chip__text">EMPRESAS RESPONDENTES</span>
+					<button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+				</span>
+
+				<!-- Deletable Chip -->
+				<span class="mdl-chip mdl-chip--deletable">
+					<span class="mdl-chip__text">PERCENTUAIS</span>
+					<button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+				</span>
+
+				<!-- Deletable Chip -->
+				<span class="mdl-chip mdl-chip--deletable">
+					<span class="mdl-chip__text">ADERÊNCIA POR PORTE</span>
+					<button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+				</span>
+
+				<!-- Deletable Chip -->
+				<span class="mdl-chip mdl-chip--deletable">
+					<span class="mdl-chip__text">PONTUAÇÃO OBTIDA</span>
+					<button type="button" class="mdl-chip__action"><i class="material-icons">cancel</i></button>
+				</span>
+				
+			</div>
+			<div class="card-export-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col text-align-center">
+						<button class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored">
+							DOWNLOAD <strong>.XLS</strong>
+						</button>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col text-align-center">
+						<button class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored">
+							DOWNLOAD <strong>.PDF</strong>
+						</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<div class="overlay hide"></div>
+

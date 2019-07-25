@@ -1,0 +1,26 @@
+{% if page.classes != 'no-footer'%}
+<footer class="mdl-mega-footer mdl-grid--spacing">
+
+	<div class="mdl-mega-footer__middle-section margin-left-20">
+		<div class="mdl-grid mdl-grid--spacing">
+			<div class="mdl-cell mdl-cell--5-col">
+				{% include svg/logo.svg cor1="#FFFFFF" cor2="#FFFFFF" cor3="#FFFFFF" width="319" %}
+			</div>
+			<div class="mdl-cell mdl-cell--7-col">
+				<div class="box-footer box-one translateY">
+					<h1 class="mdl-mega-footer__heading margin-bottom-10 margin-top-0">Parceiro técnico</h1>
+				<!-- 	<img class="img-responsive" src="{{site.baseurl}}Repositorio/dist/img/logo-fiesc.svg" alt=""> -->
+					{% include svg/logo-fiesc.svg%}
+				</div>
+				<div class="box-footer box-two margin-left-30">
+					<h1 class="mdl-mega-footer__heading margin-bottom-10 margin-top-0">Realização:</h1>
+					<!--<img class="img-responsive" src="{{site.baseurl}}Repositorio/dist/img/logos-realizacao.svg" alt="">-->
+					{% include svg/logos-realizacao.svg %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</footer>
+{% endif %}
+

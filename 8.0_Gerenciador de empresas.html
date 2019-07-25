@@ -1,0 +1,433 @@
+--- 
+layout: default 
+title: Listagem empresa
+permalink: "/gerenciador-empresa/" 
+menu: logado
+classes: no-footer
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno">
+				{% include icones/ic-plus.svg width="41" height="30" %}
+				<span>Gerenciador de Usuários</span>
+			</div>
+			<div class="item-menu-interno ativo">
+				{% include icones/ic-empresas.svg width="46" height="34" %}
+				<span>Gerenciador de Empresas</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-perfil-acesso.svg width="55" height="40" %}
+				<span>Perfil de Acesso</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-envio.svg width="40" height="30" %}
+				<span>Envio de E-mails</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-pesquisa.svg width="30" height="30" %}
+				<span>Pesquisas</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--8-col margin-left-0">
+		<h1 class="margin-bottom-0">Gerenciador de <span>Empresas</span></h1>
+		<p class="margin-0">Utilize os filtros abaixo para encontrar uma empresa:</p>
+	</div>
+	<div class="mdl-cell mdl-cell--4-col text-align-right mdl-cell--middle">
+		<button  onclick="abrirModal(dialogNovaEmpresa)" class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton">
+			Cadastrar nova empresa
+		</button>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col margin-0 formulario-filtro">
+		<form name="filtro-empresa">
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--3-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="cod-empresa">Código da empresa</label>
+						<input class="mdl-textfield__input" type="text" id="cod-empresa" placeholder="Digite o Código da Empresa">
+					</div>
+					
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="razao-social-empresa">Razão social</label>
+						<input class="mdl-textfield__input" type="email" id="razao-social-empresa" placeholder="Digite a razão social">
+					</div>
+					
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="nome-fantasia-empresa">Nome Fantasia</label>
+						<input class="mdl-textfield__input" type="email" id="nome-fantasia-empresa" placeholder="Nome fantasia">
+					</div>
+					
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="cnpj-empresa">Cnpj</label>
+						<input class="mdl-textfield__input" type="text" id="cnpj-empresa" placeholder="00.000.001/0001-00">
+					</div>
+				</div>
+			</div>
+
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--3-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="regiao-empresa">Região</label>
+						<input class="mdl-textfield__input box-drop-js" type="text" id="regiao-empresa" placeholder="Selecionar Regiões">
+					</div>
+					<div class="box-drop">
+						<ul for="estado" class="ul-drop">
+							<li class="">
+								<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-empresa-01">
+									<input type="checkbox" id="checkdrop-regiao-empresa-01"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Norte</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regiao-empresa-02">
+									<input type="checkbox" id="checkdrop-regiao-empresa-02"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Nordeste</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-regisao-empresa-03">
+									<input type="checkbox" id="checkdrop-regisao-empresa-03"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Sudeste</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="estado-empresa">Estado</label>
+						<input class="mdl-textfield__input box-drop-js" type="text" id="estado-empresa" placeholder="Selecionar Estado">
+					</div>
+					<div class="box-drop">
+						<ul class="ul-drop">
+							<li class="">
+								<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-01">
+									<input type="checkbox" id="checkdrop-estado-empresa-01"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Norte</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-02">
+									<input type="checkbox" id="checkdrop-estado-empresa-02"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Nordeste</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-estado-empresa-03">
+									<input type="checkbox" id="checkdrop-estado-empresa-03"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Sudeste</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="mesoregiao-empresa">Mesorregião</label>
+						<input class="mdl-textfield__input box-drop-js" type="text" id="mesoregiao-empresa" placeholder="Selecionar Mesorregião">
+					</div>
+					<div class="box-drop">
+						<ul for="estado" class="ul-drop">
+							<li class="">
+								<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-empresa-01">
+									<input type="checkbox" id="checkdrop-mesoregiao-empresa-01"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Noroeste de minas</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-empresa-02">
+									<input type="checkbox" id="checkdrop-mesoregiao-empresa-02"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Oeste de minas</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-mesoregiao-empresa-03">
+									<input type="checkbox" id="checkdrop-mesoregiao-empresa-03"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Norte de minas</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="municipio-empresa">Município</label>
+						<input class="mdl-textfield__input box-drop-js" type="text" id="municipio-empresa" placeholder="Selecionar Cidade">
+					</div>
+					<div class="box-drop">
+						<ul for="municipio" class="ul-drop">
+							<li class="">
+								<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-01">
+									<input type="checkbox" id="checkdrop-municipio-empresa-01"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Belo Horizonte</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-02">
+									<input type="checkbox" id="checkdrop-municipio-empresa-02"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Betim</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-municipio-empresa-03">
+									<input type="checkbox" id="checkdrop-municipio-empresa-03"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Contagem</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--3-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="segmento-empresa">Segmento</label>
+						<input class="mdl-textfield__input box-drop-js" type="text" id="segmento-empresa" placeholder="Selecionar Regiões">
+					</div>
+					<div class="box-drop">
+						<ul class="ul-drop">
+							<li class="">
+								<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-empresa-01">
+									<input type="checkbox" id="checkdrop-segmento-empresa-01"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Mineração</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-empresa-02">
+									<input type="checkbox" id="checkdrop-segmento-empresa-02"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Agronegócio</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-segmento-empresa-03">
+									<input type="checkbox" id="checkdrop-segmento-empresa-03"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Indústria</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="porte-empresa">Porte</label>
+						<input class="mdl-textfield__input box-drop-js" type="text" id="porte-empresa" placeholder="Selecionar porte">
+					</div>
+					<div class="box-drop">
+						<ul class="ul-drop">
+							<li class="">
+								<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-01">
+									<input type="checkbox" id="checkdrop-porte-empresa-01"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Grande</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-02">
+									<input type="checkbox" id="checkdrop-porte-empresa-02"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Médio</span>
+								</label>
+							</li>
+							<li class="">
+								<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-porte-empresa-03">
+									<input type="checkbox" id="checkdrop-porte-empresa-03"  class="mdl-checkbox__input">
+									<span class="mdl-checkbox__label">Pequeno</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="email-empresa">E-mail</label>
+						<input class="mdl-textfield__input" type="email" id="email-empresa" placeholder="Digite o E-mail da Usuário">
+					</div>
+
+				</div>
+			</div>
+
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--6-col margin-left-0 margin-top-20">
+					<button class="mdl-button mdl-js-button mdl-button--raised" type="submit" href="#">{% include icones/ic-filtro.svg %} Filtrar</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="mdl-grid bg-line-gray margin-top-20"> 
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--3-col margin-y0  text-align-center">
+		<span class="span"><span class="span-strong-small">17</span> resultados encontrados!</span>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing resultado-busca-lista">
+	<div class="mdl-cell mdl-cell--12-col">
+		<table class="mdl-data-table mdl-js-data-table table-striped">
+			<thead>
+				<tr>
+					<th class="mdl-data-table__cell--non-numeric">Razão Social {% include icones/ic-dropdown.svg %}</th>
+					<th class="mdl-data-table__cell--non-numeric">CNPJ {% include icones/ic-dropdown.svg %}</th>
+					<th class="mdl-data-table__cell--non-numeric">Estado {% include icones/ic-dropdown.svg %}</th>
+					<th class="mdl-data-table__cell--non-numeric">Status {% include icones/ic-dropdown.svg %}</th>
+					<th class=""></th>
+				</tr>
+
+			</thead>
+			<tbody>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 1 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">MG</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 2 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">SP</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 3 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">RJ</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 1 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">MG</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 2 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">SP</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 3 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">RJ</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 1 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">MG</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 2 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">SP</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 3 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">RJ</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 1 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">MG</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 2 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">SP</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 3 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">RJ</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 1 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">MG</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 2 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">SP</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 3 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">RJ</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Empresa 3 Ltda.</td>
+					<td class="mdl-data-table__cell--non-numeric">00.000.001/0001-00</td>
+					<td class="mdl-data-table__cell--non-numeric">RJ</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="text-align-center"><a onclick="abrirModal(dialogEdicaoEmpresa)" class="strong-editar">{% include icones/ic-editar.svg %} Editar</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="table-paginacao">
+			{% include icones/ic-dropdown.svg %} <span class="pagina ativa">1</span>.<span class="pagina">2</span> {% include icones/ic-dropdown.svg %}
+		</div>
+	</div>
+</div>

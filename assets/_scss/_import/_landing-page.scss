@@ -1,0 +1,200 @@
+.home {
+    .mdl-layout__content {
+        // padding-top: 85px;
+    }
+}
+
+.bg-amarelo {
+    background-color: unquote("rgb(#{$color-primary})");
+}
+
+.bg-cinza {
+    background-color: #242424;
+}
+
+.bg-branco {
+    background-color: unquote("rgb(#{$color-white})");
+}
+
+.destaque-logo {
+    padding: 80px 0;
+    position: relative;
+    z-index: 0;
+    &:before,
+    &:after {
+        background-color: unquote("rgb(#{$color-black})");
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+    &:before {
+        left: -1920px;
+        right: 0;
+    }
+    &:after {
+        right: -63px;
+        transform: skewX(-25deg);
+            -moz-transform: skewX(-25deg);
+            -webkit-transform: skewX(-25deg);
+            -o-transform: skewX(-25deg);
+            -ms-transform: skewX(-25deg);
+        width: 135px;
+    }
+}
+
+.titulo-destaque {
+	font-size: 42px;
+	font-weight: 300;
+	line-height: 1.11;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+}
+
+.benchmarking {
+    padding-bottom: 70px;
+    padding-top: 70px;
+    position: relative;
+    &:before,
+    &:after {
+        background-color: unquote("rgb(#{$color-primary})");
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+    }
+    &:before {
+        height: 120px;
+        top: -50px;
+        transform: skewY(3deg);
+            -moz-transform: skewY(3deg);
+            -webkit-transform: skewY(3deg);
+            -o-transform: skewY(3deg);
+            -ms-transform: skewY(3deg);
+        width: 100%;
+    }
+    &:after {
+        height: 400px;
+        right: -60px;
+        top: 0;
+        transform: skewX(30deg);
+            -moz-transform: skewX(30deg);
+            -webkit-transform: skewX(30deg);
+            -o-transform: skewX(30deg);
+            -ms-transform: skewX(30deg);
+        width: 180px;
+    }
+}
+
+.video-principal {
+    margin-top: -150px;
+    margin-bottom: 25px;
+    z-index: 1;
+    @media (min-width: 1200px) {
+        margin-top: -270px;
+    }
+}
+
+.pesquisa {
+    padding-bottom: 120px;
+    padding-top: 200px;
+    position: relative;
+    &:before {
+        background-color: unquote("rgb(#{$color-white})");
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+    }
+    &:before {
+        height: 120px;
+        top: -50px;
+        transform: skewY(3deg);
+        width: 100%;
+    }
+}
+
+.titulo-pesquisa {
+	color: unquote("rgb(#{$color-black})");
+	font-size: 45px;
+	font-weight: 300;
+	line-height: 1.11;
+    margin-bottom: 150px;
+	text-align: center;
+    text-transform: uppercase;
+}
+
+.como-funciona {
+    padding-bottom: 100px;
+    padding-top: 200px;
+    position: relative;
+    &:before {
+        background-color: unquote("rgb(#{$color-primary})");
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+    }
+    &:before {
+        height: 120px;
+        top: -50px;
+        transform: skewY(3deg);
+        width: 100%;
+    }
+}
+
+.titulo-como-funciona {
+	color: unquote("rgb(#{$color-white})");
+	font-size: 45px;
+	font-weight: 300;
+	line-height: 1.11;
+    margin-bottom: 20px;
+	text-align: center;
+    text-transform: uppercase;
+}
+
+.pronto-para-comecar {
+    background: url("../img/img-bg.svg") no-repeat center top;
+    padding-bottom: 145px;
+    padding-top: 225px;
+    position: relative;
+    &:before {
+        background-color: #242424;
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 0;
+    }
+    &:before {
+        height: 120px;
+        top: -50px;
+        transform: skewY(3deg);
+        width: 100%;
+    }
+}
+
+.titulo-pronto-para-comecar {
+	font-size: 45px;
+	font-weight: 300;
+	line-height: 1.11;
+    margin-bottom: 50px;
+	text-align: center;
+    text-transform: uppercase;
+}
+
+.mdl-cell {
+    &.col-7 {
+        text-align: center;
+        width: calc(14.2857% - 16px);
+        svg {
+            fill: unquote("rgb(#{$color-white})");
+            height: 43px;
+            margin-bottom: 20px;
+        }
+    }
+}

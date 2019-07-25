@@ -1,0 +1,180 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* ==========  Color Palettes  ========== */
+
+// Color order: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200,
+// A400, A700.
+
+$palette-red:
+"255,235,238"
+"255,205,210"
+"239,154,154"
+"229,115,115"
+"239,83,80"
+"244,67,54"
+"229,57,53"
+"211,47,47"
+"198,40,40"
+"183,28,28"
+"255,138,128"
+"255,82,82"
+"255,23,68"
+"213,0,0";
+
+$palette-red-50: nth($palette-red, 1);
+$palette-red-100: nth($palette-red, 2);
+$palette-red-200: nth($palette-red, 3);
+$palette-red-300: nth($palette-red, 4);
+$palette-red-400: nth($palette-red, 5);
+$palette-red-500: nth($palette-red, 6);
+$palette-red-600: nth($palette-red, 7);
+$palette-red-700: nth($palette-red, 8);
+$palette-red-800: nth($palette-red, 9);
+$palette-red-900: nth($palette-red, 10);
+$palette-red-A100: nth($palette-red, 11);
+$palette-red-A200: nth($palette-red, 12);
+$palette-red-A400: nth($palette-red, 13);
+$palette-red-A700: nth($palette-red, 14);
+
+$palette-blue:
+"0,106,182"
+"187,222,251"
+"144,202,249"
+"100,181,246"
+"66,165,245"
+"33,150,243"
+"30,136,229"
+"25,118,210"
+"21,101,192"
+"13,71,161"
+"130,177,255"
+"68,138,255"
+"41,121,255"
+"41,98,255";
+
+$palette-blue-50: nth($palette-blue, 1);
+$palette-blue-100: nth($palette-blue, 2);
+$palette-blue-200: nth($palette-blue, 3);
+$palette-blue-300: nth($palette-blue, 4);
+$palette-blue-400: nth($palette-blue, 5);
+$palette-blue-500: nth($palette-blue, 6);
+$palette-blue-600: nth($palette-blue, 7);
+$palette-blue-700: nth($palette-blue, 8);
+$palette-blue-800: nth($palette-blue, 9);
+$palette-blue-900: nth($palette-blue, 10);
+$palette-blue-A100: nth($palette-blue, 11);
+$palette-blue-A200: nth($palette-blue, 12);
+$palette-blue-A400: nth($palette-blue, 13);
+$palette-blue-A700: nth($palette-blue, 14);
+
+$palette-green:
+"232,245,233"
+"200,230,201"
+"165,214,167"
+"129,199,132"
+"102,187,106"
+"76,175,80"
+"67,160,71"
+"56,142,60"
+"46,125,50"
+"27,94,32"
+"185,246,202"
+"105,240,174"
+"0,230,118"
+"0,200,83";
+
+$palette-green-50: nth($palette-green, 1);
+$palette-green-100: nth($palette-green, 2);
+$palette-green-200: nth($palette-green, 3);
+$palette-green-300: nth($palette-green, 4);
+$palette-green-400: nth($palette-green, 5);
+$palette-green-500: nth($palette-green, 6);
+$palette-green-600: nth($palette-green, 7);
+$palette-green-700: nth($palette-green, 8);
+$palette-green-800: nth($palette-green, 9);
+$palette-green-900: nth($palette-green, 10);
+$palette-green-A100: nth($palette-green, 11);
+$palette-green-A200: nth($palette-green, 12);
+$palette-green-A400: nth($palette-green, 13);
+$palette-green-A700: nth($palette-green, 14);
+
+$palette-yellow: 
+"255,249,196"
+"230,175,0"
+"255,245,157"
+"255,241,118"
+"255,238,88"
+"255,235,59"
+"253,216,53"
+"251,192,45"
+"249,168,37"
+"245,127,23"
+"255,255,141"
+"255,255,0"
+"255,234,0"
+"255,214,0";
+
+$palette-yellow-50: nth($palette-yellow, 1);
+$palette-yellow-100: nth($palette-yellow, 2);
+$palette-yellow-200: nth($palette-yellow, 3);
+$palette-yellow-300: nth($palette-yellow, 4);
+$palette-yellow-400: nth($palette-yellow, 5);
+$palette-yellow-500: nth($palette-yellow, 6);
+$palette-yellow-600: nth($palette-yellow, 7);
+$palette-yellow-700: nth($palette-yellow, 8);
+$palette-yellow-800: nth($palette-yellow, 9);
+$palette-yellow-900: nth($palette-yellow, 10);
+$palette-yellow-A100: nth($palette-yellow, 11);
+$palette-yellow-A200: nth($palette-yellow, 12);
+$palette-yellow-A400: nth($palette-yellow, 13);
+$palette-yellow-A700: nth($palette-yellow, 14);
+
+// Color order: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900.
+
+$palette-grey:
+"250,250,250"
+"245,245,245"
+"238,238,238"
+"224,224,224"
+"189,189,189"
+"147,149,151"
+"117,117,117"
+"97,97,97"
+"66,66,66"
+"33,33,33";
+
+$palette-grey-50: nth($palette-grey, 1);
+$palette-grey-100: nth($palette-grey, 2);
+$palette-grey-200: nth($palette-grey, 3);
+$palette-grey-300: nth($palette-grey, 4);
+$palette-grey-400: nth($palette-grey, 5);
+$palette-grey-500: nth($palette-grey, 6);
+$palette-grey-600: nth($palette-grey, 7);
+$palette-grey-700: nth($palette-grey, 8);
+$palette-grey-800: nth($palette-grey, 9);
+$palette-grey-900: nth($palette-grey, 10);
+
+$color-black: "0,0,0";
+$color-white: "255,255,255";
+
+
+/* colors.scss */
+$styleguide-generate-template: false !default;
+
+// The two possible colors for overlayed text.
+$color-dark-contrast: $color-white !default;
+$color-light-contrast: $color-black !default;

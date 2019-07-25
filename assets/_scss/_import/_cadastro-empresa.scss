@@ -1,0 +1,30 @@
+.cadastro-empresa {
+    .conteudo {
+        .mdl-grid.mdl-grid--spacing {
+            padding-left: 250px;
+        }
+    }
+    .mdl-grid {
+        padding-top: 0;
+    }
+}
+.destaque-cadastro {
+    background: url("../img/img-banner-cadastro.jpg") no-repeat center top;
+    height: 359px;
+    margin-bottom: 30px;
+}
+
+.title-step-4 {
+    color: black;
+    font-weight:bold;
+    margin-left: -7px;
+}
+
+.finish-button {
+    margin-left: 18px !important;
+}
+
+.margin-next-button {
+    margin-left: -16px;
+    margin-top: 20px;
+}

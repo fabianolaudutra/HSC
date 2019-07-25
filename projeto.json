@@ -1,0 +1,23 @@
+{
+	"title": "FIESC - HSC",
+	"version": "0.0.0",
+	"description": "FIESC - HSC",
+	"http_path": "/",
+	"baseUrl": "/",
+	"css_dir": "dist/css",
+	"sass_dir": "assets/_scss",
+	"fonts_assets": "assets/_fonts",
+	"fonts_dist": "dist/fonts",
+	"javascripts_dir": "assets/_js",
+	"images_dir": "dist/img",
+	"sprite_load_path": "assets/_img",
+	"dist_dir": "dist",
+	"local_dir": "Local",
+	"assets_dir": "assets",
+	"homologacao_dir": "/",
+	"homologacao_url": "/",
+	"author": {
+		"name": "Fabiano Lau Dutra",
+		"email": "fabiano.dutra@stefanini.com"
+	}
+}

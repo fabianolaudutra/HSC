@@ -1,0 +1,118 @@
+--- 
+layout: default 
+title: Gerenciamento de Perfil
+permalink: "/gerenciamento-perfil/" 
+classes: no-footer
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno">
+				{% include icones/ic-plus.svg width="41" height="30" %}
+				<span>Gerenciador de Usuários</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-empresas.svg width="46" height="34" %}
+				<span>Gerenciador de Empresas</span>
+			</div>
+			<div class="item-menu-interno ativo">
+				{% include icones/ic-perfil-acesso.svg width="55" height="40" %}
+				<span>Perfil de Acesso</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-envio.svg width="40" height="30" %}
+				<span>Envio de E-mails</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-pesquisa.svg width="30" height="30" %}
+				<span>Pesquisas</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid margin-top-20 mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--4-col">
+		<h1>Perfil de <span>Acesso</span></h1>
+	</div>
+	<div class="mdl-cell mdl-cell--4-offset mdl-cell--4-col mdl-cell--middle text-align-right">
+		<button onclick="abrirModal(dialogNovoPerfil)" class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton" id="btnNovoPerfil">
+			Cadastrar novo perfil
+		</button>
+	</div>
+</div>
+
+<div class="mdl-grid bg-line-gray"> 
+	<div class="mdl-layout-spacer"></div>
+	<div class="mdl-cell mdl-cell--3-col text-align-center">
+		<span class="span"><span class="span-strong-small">4</span> perfis cadastrados</span>
+	</div>
+	<div class="mdl-layout-spacer"></div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing"> 
+	<div class="mdl-cell mdl-cell--3-offset mdl-cell--6-col text-align-center">
+		<table class="mdl-data-table mdl-js-data-table table-align-text-center table-striped">
+			<thead>
+				<tr>
+					<th class="mdl-data-table__cell--non-numeric">Perfil {% include icones/ic-dropdown.svg %}</th>
+					<th class="mdl-data-table__cell--non-numeric">Status {% include icones/ic-dropdown.svg %}</th>
+					<th class="text-align-center"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Administrador</td>
+					<td class="mdl-data-table__cell--non-numeric">Ativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Respondente</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Executivo</td>
+					<td class="mdl-data-table__cell--non-numeric">Ativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Perfil 4</td>
+					<td class="mdl-data-table__cell--non-numeric">Ativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Perfil 5</td>
+					<td class="mdl-data-table__cell--non-numeric">Ativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Perfil 6</td>
+					<td class="mdl-data-table__cell--non-numeric">Inativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+				<tr>
+					<td class="mdl-data-table__cell--non-numeric">Perfil 7</td>
+					<td class="mdl-data-table__cell--non-numeric">Ativo</td>
+					<td class="mdl-data-table__cell--non-numeric">
+						<a class="strong-editar" onclick="abrirModal(dialogEditarPerfil)">{% include icones/ic-editar.svg %} Editar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

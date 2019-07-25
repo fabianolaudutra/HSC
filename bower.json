@@ -1,0 +1,13 @@
+{
+  "name": "FIESC - HSC",
+  "description": "FIESC - HSC",
+  "main": "index.html",
+  "authors": [
+    "<fabiano.dutra@stefanini.com>"
+  ],
+  "moduleType": [],
+  "homepage": "/",
+  "dependencies": {
+    
+  }
+}

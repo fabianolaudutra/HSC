@@ -1,0 +1,264 @@
+--- 
+layout: default 
+title: Pesquisa
+permalink: "/pesquisa-respondente/" 
+menu: logado
+classes: no-footer
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno">
+				{% include icones/ic-plus.svg width="41" height="30" %}
+				<span>Gerenciador de Usuários</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-empresas.svg width="46" height="34" %}
+				<span>Gerenciador de Empresas</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-perfil-acesso.svg width="55" height="40" %}
+				<span>Perfil de Acesso</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="formulario-filtro">
+	<form name="filtro-usuario">
+		<div class="mdl-grid mdl-grid--spacing">
+			<div class="mdl-cell mdl-cell--8-col">
+				<h1 class="margin-bottom-10">Pesquisas</h1>
+				<p class="margin-0">Utilize os filtros abaixo para encontrar uma pesquisa:</p>
+			</div>
+			<div class="mdl-cell mdl-cell--4-col text-align-right margin-top-40">
+				<button class="mdl-button mdl-js-button mdl-button--raised" type="submit" href="#">{% include icones/ic-filtro.svg %} Filtrar</button>
+			</div>
+		</div>
+
+		<div class="mdl-grid mdl-grid--spacing">
+			<div class="mdl-cell mdl-cell--12-col formulario-filtro">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col margin-top-0 margin-bottom-0 margin-left-0">
+						<div class="mdl-textfield mdl-js-textfield">
+							<label class="mdl-textfield__label label-sem-barra" for="nome">Nome da empresa</label>
+							<input class="mdl-textfield__input" type="text" id="nome" placeholder="Digite o Nome da Empresa">
+						</div>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col margin-top-0 margin-bottom-0">
+						<div class="mdl-textfield mdl-js-textfield ">
+							<label class="mdl-textfield__label label-sem-barra" for="nome">Nome da pesquisa</label>
+							<input class="mdl-textfield__input" type="text" id="nome" placeholder="Digite o Nome da Pesquisa">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</form>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing resultado-busca-lista">
+	<div class="mdl-cell mdl-cell--12-col">
+
+		<div class="card-pesquisa-container">
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--12-col">
+					<div class="card-administrativo ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Ativo</p>
+								<p><a class="strong-editar"><i class="material-icons">list</i> <span class="icon-translate">Continuar respondendo</span></a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Inativo</p>
+								<p><a class="strong-editar"><i class="material-icons">list</i> <span class="icon-translate">Responder</span></a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Ativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Ativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--12-col">
+					<div class="card-administrativo ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Ativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Inativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Inativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Inativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--12-col">
+					<div class="card-administrativo ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Ativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Inativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Ativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-administrativo margin-left-card ativo">
+						<div class="mdl-card mdl-shadow--8dp padding-20">
+							<div class="mdl-card__supporting-text card-header text-align-center">
+								<p>VALE RN</p>
+								<h2>Saúde e Segurança</h2>
+
+							</div>
+							<div class="mdl-card__supporting-text card-body padding-top-0 text-align-center">
+								<p>20/01/2017</p>
+								<p>Inativo</p>
+								<p><a class="strong-editar">{% include icones/ic-eyes.svg %} Ver detalhe</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+		<div class="table-paginacao">
+			{% include icones/ic-dropdown.svg %} <span class="pagina ativa">1</span>.<span class="pagina">2</span> {% include icones/ic-dropdown.svg %}
+		</div>
+
+	</div>
+</div>

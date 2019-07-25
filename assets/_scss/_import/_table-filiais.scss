@@ -1,0 +1,95 @@
+.table-branch {
+	.mdl-data-table {
+		white-space: initial;
+		th {
+			text-transform: uppercase;
+			vertical-align: middle;
+			background: #f4f4f4;
+			color: #000000;
+			font-size: 16px;
+			line-height: 17px;
+			font-weight: 500;
+			padding-top: 8px;
+		}
+		td {
+			color: #4a4a4a;
+			font-weight: 400;
+		}
+		tr td:nth-child(1) {
+			svg {
+				width: 33px;
+				fill: #E9B719;
+			}
+		}
+		tr td:nth-child(4) {
+			width: 34%;
+		}
+		tr td:nth-child(2) {
+			text-transform: uppercase;
+		}
+		tr:first-child td {
+			border-top: 1px solid #ECECEC;
+		}
+		td:first-of-type,th:first-of-type {
+			padding-left: 10px;
+		}
+		td:last-of-type,th:last-of-type {
+			padding-right: 10px;
+		}
+		tr:first-child td {
+			border-top: 1px solid #ECECEC;
+		}
+		.info-success {
+			color: #66ad19;
+		}
+		.info-danger {	
+			color: #d0011b;
+		}
+		.info-alert {	
+			color: #E6AF00;
+		}
+	}
+}
+
+.w-186 {
+	width: 186px !important;
+}
+
+.bold-span {
+	font-weight: bold;
+}
+
+.aux-top {
+	margin-top: -22px;
+}
+
+.branch {
+	padding: 6em !important;
+}
+
+.button-branch {
+	float: right;
+    margin-right: -7px;
+    margin-top: 35px !important;
+}
+
+
+@media (max-width: 480px) 
+{
+    .branch {
+		padding: 0em;
+	}
+
+	.button-branch {
+		float: none;
+		margin-right: 0px;
+	}
+
+	.mdl-button--medio {
+		padding: 0 3em;
+	}
+
+	.padding-left-150 {
+		padding-left: 0;
+	}
+}

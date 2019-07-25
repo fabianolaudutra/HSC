@@ -1,0 +1,153 @@
+--- 
+layout: default 
+title: Area do Usuario
+permalink: "/gerenciar-empresa/" 
+menu: logado
+classes: no-footer
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno">
+				{% include icones/ic-pesquisa.svg width="41" height="30" %}
+				<span>Pesquisas</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-plus.svg width="46" height="34" %}
+				<span>Área do Usuário</span>
+			</div>
+			<div class="item-menu-interno ativo">
+				{% include icones/ic-empresas.svg width="40" height="30" %}
+				<span>Gerenciar Empresa</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--8-col margin-left-0 margin-y0">
+		<h1 class="margin-bottom-0">Gerenciar<span> Empresa</span></h1>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col margin-0 formulario-filtro">
+		<form name="filtro-usuario">
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--8-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="razao_social">Razão Social</label>
+						<input class="mdl-textfield__input" type="text" id="razao_social_respondente">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="cnpj">CNPJ</label>
+						<input class="mdl-textfield__input" type="text" id="cnpj_respondente">
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--5-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="nome">Nome fantasia</label>
+						<input class="mdl-textfield__input" type="email" id="nome_fantasia_respondente">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+						<label for="empresa" class="mdl-textfield__label label-sem-barra">Porte</label>
+						<input class="mdl-textfield__input" type="text" id="porte_respondente" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="empresa" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Empresa X</li>
+							<li class="mdl-menu__item">Empresa Y</li>
+							<li class="mdl-menu__item">Empresa Z</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="setor">Setor</label>
+						<input class="mdl-textfield__input" type="text" id="setor_respondente">
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--4-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+						<label for="empresa" class="mdl-textfield__label label-sem-barra">País</label>
+						<input class="mdl-textfield__input" type="text" id="pais" placeholder="Escolha o país" readonly tabindex="-1">
+						<ul for="empresa" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Brasil</li>
+							<li class="mdl-menu__item">Holanda</li>
+							<li class="mdl-menu__item">Estados Unidos</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+						<label for="empresa" class="mdl-textfield__label label-sem-barra">Estado</label>
+						<input class="mdl-textfield__input" type="text" id="estado" placeholder="Escolha o Estado" readonly tabindex="-1">
+						<ul for="empresa" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Belo Horizonte</li>
+							<li class="mdl-menu__item">São Paulo</li>
+							<li class="mdl-menu__item">Santa Catarina</li>
+						</ul>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+						<label for="empresa" class="mdl-textfield__label label-sem-barra">Município</label>
+						<input class="mdl-textfield__input" type="text" id="estado" placeholder="Escolha o Município" readonly tabindex="-1">
+						<ul for="empresa" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Belo Horizonte</li>
+							<li class="mdl-menu__item">São Paulo</li>
+							<li class="mdl-menu__item">Santa Catarina</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid border-bottom"></div>
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--4-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="nome">Nome do Contato</label>
+						<input class="mdl-textfield__input" type="text" id="nome" placeholder="Nome do contato">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="cargo">Cargo</label>
+						<input class="mdl-textfield__input" type="text" id="cargo" placeholder="Cargo">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="funcao">Função</label>
+						<input class="mdl-textfield__input" type="text" id="funcao" placeholder="Função">
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--3-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="telefone">Telefone</label>
+						<input class="mdl-textfield__input" type="text" id="telefone" placeholder="Telefone">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--5-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="email">Email</label>
+						<input class="mdl-textfield__input" type="text" id="email" placeholder="Digite o E-mail">
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid mdl-grid--spacing margin-bottom-75">
+		        <div class="mdl-cell mdl-cell--12-col center margin-0">
+		            <a class="mdl-button mdl-js-button mdl-button--medio mdl-button--raised button-company" href="#">Salvar</a>
+		        </div>
+    		</div>
+		</form>
+	</div>
+</div>

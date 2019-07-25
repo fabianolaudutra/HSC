@@ -1,0 +1,42 @@
+//Header
+.logo {
+	display: block;
+	width: 220px;
+	margin-left: 10px;
+	svg {
+		width: 100%;
+	}
+}
+.header-progress {
+	position: fixed;
+	width: 100%;
+	min-width: 100%;
+	z-index: 999;
+	.block-progress {
+		float:left;
+		width: 7.14%;
+		background: #676767;
+		border-right: 1px solid white;
+		height: 15px;
+		padding: 0;
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		&.active {
+			background: #ffc200;
+		}
+	}
+	&.block-progress:last-child {
+		border-right: none;
+	}
+}
+
+.user-name-section {
+	p {
+		margin: 0;
+		line-height: 20px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+}

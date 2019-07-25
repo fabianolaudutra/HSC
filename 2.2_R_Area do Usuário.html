@@ -1,0 +1,108 @@
+--- 
+layout: default 
+title: Area do Usuario
+permalink: "/area-usuario/" 
+menu: logado
+classes: no-footer
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno">
+				{% include icones/ic-pesquisa.svg width="41" height="30" %}
+				<span>Pesquisas</span>
+			</div>
+			<div class="item-menu-interno ativo">
+				{% include icones/ic-plus.svg width="46" height="34" %}
+				<span>Área do Usuário</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-empresas.svg width="40" height="30" %}
+				<span>Gerenciar Empresa</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--8-col margin-left-0 margin-y0">
+		<h1 class="margin-bottom-0">Área do <span>Usuário</span></h1>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--9-col margin-0 formulario-filtro">
+		<form name="filtro-usuario">
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--3-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="codigo">Código do usuário</label>
+						<input class="mdl-textfield__input" type="text" id="codigo_respondente" placeholder="Digite o Código do Usuário">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="nome">Nome</label>
+						<input class="mdl-textfield__input" type="text" id="nome" placeholder="Digite o Nome do Usuário">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--3-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+						<label for="status" class="mdl-textfield__label label-sem-barra">Status</label>
+						<input class="mdl-textfield__input" type="text" id="status_respondente" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="status" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Ativo</li>
+							<li class="mdl-menu__item">Padrão</li>
+							<li class="mdl-menu__item">Inativo</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--6-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label label-sem-barra" for="codigo">E-mail</label>
+						<input class="mdl-textfield__input" type="email" id="email" placeholder="Digite o E-mail do Usuário">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+						<label for="empresa" class="mdl-textfield__label label-sem-barra">Empresa</label>
+						<input class="mdl-textfield__input" type="text" id="empresa_respondente" placeholder="Selecione" readonly tabindex="-1">
+						<ul for="empresa" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+							<li class="mdl-menu__item">Empresa X</li>
+							<li class="mdl-menu__item">Empresa Y</li>
+							<li class="mdl-menu__item">Empresa Z</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid no-padding">
+				<div class="mdl-cell mdl-cell--4-col margin-y0 margin-left-0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="cargo">Cargo</label>
+						<input class="mdl-textfield__input" type="text" id="cargo" placeholder="Digite o Cargo">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="funcao">Função</label>
+						<input class="mdl-textfield__input" type="text" id="funcao" placeholder="Digite a função">
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--4-col margin-y0">
+					<div class="mdl-textfield mdl-js-textfield ">
+						<label class="mdl-textfield__label label-sem-barra" for="telefone">Telefone</label>
+						<input class="mdl-textfield__input" type="text" id="telefone" placeholder="Digite o telefone">
+					</div>
+				</div>
+			</div>
+			<div class="mdl-grid mdl-grid--spacing margin-bottom-75">
+		        <div class="mdl-cell mdl-cell--12-col padding-left-150 margin-0">
+		            <a class="mdl-button mdl-js-button mdl-button--medio mdl-button--raised finish-button" href="#">Salvar Alterações</a>
+		        </div>
+    		</div>
+		</form>
+	</div>
+</div>

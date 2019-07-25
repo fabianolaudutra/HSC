@@ -1,0 +1,130 @@
+.graphics-header {
+	background: #F2F2F2;
+}
+
+.canvasjs-chart-container {
+	width: 100%;
+	height: 300px;
+}
+
+.title-gph {
+	font-size: 42px;
+	font-weight: 500;
+	color: #ffffff;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.legend-gph {
+	h2 {
+		font-size: 16px;
+		font-weight: 500;
+		color: #303030;
+		margin: 0;
+		line-height: 1.5;
+	}
+}
+
+.legend-box {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+	border: solid 1px #ffffff;
+	margin-right: 3px;
+	&-red {
+		background: #D0011B;
+	}
+	&-yellow {
+		background: #E6AF00;
+	}
+	&-green {
+		background: #66AD19;
+	}
+}
+
+
+.card-graphy {
+	position: relative;
+	background: #ffffff;
+	box-sizing: border-box;
+	padding: 15px 5px 37px 5px;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.22);
+
+	.card-footer {
+		position: absolute;	
+		bottom: 8px;
+		background: #4a4a4a;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: bold;	
+		text-transform: uppercase;
+		padding: 4px 0;
+		height: 30px;
+		width: 97%;
+	} 
+}
+
+.background-gray{
+	background: #4A4A4A;
+	padding-bottom: 40px;
+}
+
+.text-field-ghp::before {
+	z-index: 2;
+}
+
+.text-field-ghp {
+	.mdl-textfield__label {
+		font-weight: 500;
+		color: #ffffff;
+		font-size: 14px;
+	}
+	.mdl-textfield__input {
+		font-family: "Blogger Sans","Helvetica","Arial",sans-serif;
+		color: #000000;
+		font-size: 14px;
+		background: white;
+		font-weight: 500;
+		border-radius: 5px;
+		&::-webkit-input-placeholder {
+			font-family: "Blogger Sans","Helvetica","Arial",sans-serif;
+			font-size: 14px;
+			color: #000000;
+			font-weight: 500;
+			border: 0;
+			border: none;
+			text-transform: uppercase;
+		}
+		::-moz-placeholder { /* Firefox 19+ */
+			font-family: "Blogger Sans","Helvetica","Arial",sans-serif;
+			font-size: 14px;
+			color: #000000;
+			font-weight: 500;
+			border: 0;
+			border: none;
+			text-transform: uppercase;
+		}
+		:-ms-input-placeholder { /* IE 10+ */
+			font-family: "Blogger Sans","Helvetica","Arial",sans-serif;
+			font-size: 14px;
+			color: #000000;
+			font-weight: 500;
+			border: 0;
+			border: none;
+			text-transform: uppercase;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+			font-family: "Blogger Sans","Helvetica","Arial",sans-serif;
+			font-size: 14px;
+			color: #000000;
+			font-weight: 500;
+			border: 0;
+			border: none;
+			text-transform: uppercase;
+		}
+	}
+
+}

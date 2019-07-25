@@ -1,0 +1,110 @@
+--- 
+layout: default 
+title: Capa
+permalink: "/cadastro-empresa-03/"
+menu: logar
+classes: cadastro-empresa
+---
+<div class="conteudo">
+    <div class="destaque-cadastro">
+        <div class="mdl-grid mdl-grid--spacing">
+            <div class="mdl-cell mdl-cell--9-col mdl-cell--3-offset">
+                <h2 class="titulo-pagina mdl-typography--text-uppercase">Cadastro <br> de empresa</h2>
+            </div>
+        </div>
+    </div>
+    <div class="mdl-grid mdl-grid--spacing">
+        <div class="passo-a-passo passo-1 padding-left-150 passado">
+            <!--<h3 class="titulo-passo mdl-typography--text-uppercase"><a class="btn-editar" href="{{site.baseurl}}cadastro-empresa-01/"><img src="{{site.baseurl}}Repositorio/dist/img/ic-edit.svg" alt=""> Editar informações</a><span class="indicador-passo"><img src="{{site.baseurl}}Repositorio/dist/img/ic-confirm.svg" alt=""></span> Dados da empresa </h3>-->
+            <h3 class="titulo-passo mdl-typography--text-uppercase">
+                <a class="btn-editar" href="{{site.baseurl}}cadastro-empresa-01/">
+                    {% include icones/ic-edit.svg %}
+                    Editar informações
+                </a>
+                <span class="indicador-passo">
+                    {% include icones/ic-confirm.svg %}
+                </span> 
+                Dados da empresa 
+            </h3>
+        </div><!--passo-1-->
+    </div>
+    <div class="mdl-grid mdl-grid--spacing">
+        <div class="passo-a-passo passo-2 padding-left-150 passado imediato">
+            <!--<h3 class="titulo-passo mdl-typography--text-uppercase"><span class="indicador-passo">2</span> </h3>-->
+            <!--<h3 class="titulo-passo mdl-typography--text-uppercase"><a class="btn-editar" href="{{site.baseurl}}cadastro-empresa-02/"><img src="{{site.baseurl}}Repositorio/dist/img/ic-edit.svg" alt=""> Editar informações</a><span class="indicador-passo"><img src="{{site.baseurl}}Repositorio/dist/img/ic-confirm.svg" alt=""></span> Dados de contato </h3>-->
+            <h3 class="titulo-passo mdl-typography--text-uppercase">
+                <a class="btn-editar" href="{{site.baseurl}}cadastro-empresa-02/">
+                    {% include icones/ic-edit.svg %}
+                    Editar informações
+                </a>
+                <span class="indicador-passo">
+                    {% include icones/ic-confirm.svg %}
+                </span> 
+                Dados de contato
+            </h3>
+        </div><!--passo-2-->
+    </div>
+    <div class="mdl-grid mdl-grid--spacing">
+        <div class="passo-a-passo passo-3 padding-left-150">
+            <h3 class="titulo-passo mdl-typography--text-uppercase"><span class="indicador-passo">3</span> Localização</h3>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+                        <label for="pais" class="mdl-textfield__label">País</label>
+                        <input class="mdl-textfield__input" type="text" id="pais" placeholder="Selecione" readonly tabIndex="-1">
+                        <ul for="pais" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item">Brasil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+                        <label for="estado" class="mdl-textfield__label">Estado</label>
+                        <input class="mdl-textfield__input" type="text" id="estado" placeholder="Selecione" readonly tabIndex="-1">
+                        <ul for="estado" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item">Santa Catarina</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+                        <label for="cidade" class="mdl-textfield__label">Município</label>
+                        <input class="mdl-textfield__input" type="text" id="cidade" placeholder="Selecione" readonly tabIndex="-1">
+                        <ul for="cidade" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <li class="mdl-menu__item">Brasil</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <a class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored" href="{{site.baseurl}}cadastro-empresa-04/">Próximo</a>
+                </div>
+            </div>
+        </div><!--passo-3-->
+    </div>
+    <div class="mdl-grid mdl-grid--spacing">
+        <div class="passo-a-passo passo-3 padding-left-150 inativo">
+            <h3 class="titulo-passo mdl-typography--text-uppercase"><span class="indicador-passo">4</span> Plano de saúde</h3>
+        </div><!--passo-4-->
+    </div>
+    <div class="mdl-grid mdl-grid--spacing">
+        <div class="passo-a-passo passo-3 padding-left-150 inativo">
+            <h3 class="titulo-passo mdl-typography--text-uppercase"><span class="indicador-passo">4</span> Demografia</h3>
+        </div><!--passo-4-->
+    </div>
+    <div class="mdl-grid mdl-grid--spacing">
+        <div class="passo-a-passo passo-4 padding-left-150 inativo">
+            <h3 class="titulo-passo mdl-typography--text-uppercase"><span class="indicador-passo">4</span> Dados de acesso</h3>
+        </div><!--passo-4-->
+    </div>
+    <div class="mdl-grid mdl-grid--spacing margin-bottom-75">
+        <div class="mdl-cell mdl-cell--12-col padding-left-150 margin-0">
+            <a class="mdl-button mdl-js-button mdl-button--big mdl-button--raised" href="#">Finalizar cadastro</a>
+        </div>
+    </div>
+</div>

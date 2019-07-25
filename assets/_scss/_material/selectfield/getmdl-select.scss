@@ -1,0 +1,50 @@
+.getmdl-select {
+  &:before {
+    // border-style: solid;
+    // border-width: 8px 8px 0 8px;
+    // border-color: $input-text-bottom-border-color transparent transparent transparent;
+
+    background: url("../../dist/img/ic-dropdown.svg") no-repeat;
+    width: 10px;
+    height: 10px;
+    bottom: 22px;
+    content: "";
+    position: absolute;
+    right: 15px;
+    z-index: 0;
+  }
+  .mdl-textfield__input {
+    cursor: default;
+    position: relative;
+    z-index: 1;
+  } 
+  .mdl-icon-toggle__label {
+    float: right;
+    margin-top: -30px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+  &.is-focused {
+    .mdl-icon-toggle__label {
+      color: #3f51b5;
+    }
+  }
+
+  .mdl-menu__container {
+    width: 100% !important;
+    .mdl-menu .mdl-menu__item {
+      font-size: 16px;
+    }
+  }
+}
+.getmdl-select__fullwidth {
+  .mdl-menu {
+    width: 100%;
+  }
+}
+
+.getmdl-select__fix-height{
+  .mdl-menu__container{
+    overflow-y: auto;
+    max-height: 300px !important;
+  }
+}

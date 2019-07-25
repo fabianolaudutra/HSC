@@ -1,0 +1,824 @@
+--- 
+layout: default 
+title: Dashboard Respondente
+permalink: "/dashboard-administrador/" 
+---
+
+<section class="menu-interno">
+	<div class="mdl-grid mdl-grid--spacing no-padding-y flex-justify-center">
+		<div class="mdl-cell mdl-cell--12-col margin-0">
+			<div class="item-menu-interno ativo">
+				{% include icones/ic-pesquisa.svg width="30" height="30" %}
+				<span>Pesquisas</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-plus.svg width="41" height="30" %}
+				<span>Gerenciador de Usuários</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-empresas.svg width="46" height="34" %}
+				<span>Gerenciador de Empresas</span>
+			</div>
+			<div class="item-menu-interno">
+				{% include icones/ic-perfil-acesso.svg width="55" height="40" %}
+				<span>Perfil de Acesso</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--9-col">
+		<h1>Saúde e Segurança</h1>
+	</div>
+	<div class="mdl-cell mdl-cell--3-col mdl-cell--middle text-align-right">
+		<button class="mdl-button mdl-js-button mdl-button--medium mdl-button--raised mdl-button--colored" data-upgraded=",MaterialButton" onclick="abrirModal(dialogExport)">
+			Exportar relatório
+		</button>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing bottom-0 ">
+	<div class="mdl-cell mdl-cell--12-col">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-16 bottom-0">
+			<div class="mdl-card__supporting-text card-header text-align-right zindex1">
+				<div class="mdl-grid no-padding grid-hfull">
+					<div class="mdl-grid mdl-cell--12-col no-padding margin-0">
+						<div class="mdl-cell mdl-cell--6-col mdl-cell--middle">
+							<span class="middle-text left-text">DESTAQUES CONCLUÍNTES</span>
+						</div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro1"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro1" placeholder="">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-01">
+											<input type="checkbox" id="checkdrop-filtro-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-02">
+											<input type="checkbox" id="checkdrop-filtro-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-03">
+											<input type="checkbox" id="checkdrop-filtro-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-04">
+											<input type="checkbox" id="checkdrop-filtro-04"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro2"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro2" placeholder="-">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-05">
+											<input type="checkbox" id="checkdrop-filtro-05"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-06">
+											<input type="checkbox" id="checkdrop-filtro-06"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-07">
+											<input type="checkbox" id="checkdrop-filtro-07"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-08">
+											<input type="checkbox" id="checkdrop-filtro-08"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mdl-grid margin-0 zindex-0 no-padding">
+				<div class="mdl-cell mdl-cell--2-col text-align-center">
+					<div class="background-card-chart">
+						<span class="middle-text title-card-chart">CONCLUÍNTES</span>
+						<div class="background-card-chart-center w-88">
+							<span>111</span>
+						</div>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--2-col text-align-center">
+					<div class="background-card-chart">
+						<span class="middle-text title-card-chart">PONTUAÇÃO MÉDIA</span>
+						<div class="background-card-chart-center w-88">
+							<span>44,7</span>
+						</div>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--2-col text-align-center">
+					<div class="background-card-chart">
+						<span class="middle-text title-card-chart">EM ANDAMENTO</span>
+						<div class="background-card-chart-center w-88">
+							<span>44%</span>
+						</div>
+					</div>
+				</div>
+				<div class="mdl-cell mdl-cell--6-col text-align-center">
+					<div class="background-card-chart">
+						<span class="middle-text title-card-chart">% ADERÊNCIA</span>
+						<div class="background-card-chart-center">
+							<span>23,78%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing bottom-0">
+	<div class="mdl-cell mdl-cell--6-col">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-16 bottom-0">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<div class="mdl-grid no-padding grid-hfull">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<span class="middle-text">EMPRESAS RESPONDENTES</span>
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro1"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro1" placeholder="Escolaridade">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-01">
+											<input type="checkbox" id="checkdrop-filtro-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-02">
+											<input type="checkbox" id="checkdrop-filtro-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-03">
+											<input type="checkbox" id="checkdrop-filtro-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-04">
+											<input type="checkbox" id="checkdrop-filtro-04"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro2"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro2" placeholder="-">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-05">
+											<input type="checkbox" id="checkdrop-filtro-05"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-06">
+											<input type="checkbox" id="checkdrop-filtro-06"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-07">
+											<input type="checkbox" id="checkdrop-filtro-07"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-08">
+											<input type="checkbox" id="checkdrop-filtro-08"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<div id="chartContainer13" style="height:540px"></div>
+			</div>
+		</div>
+
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-16 margin-top-15 bottom-0">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<div class="mdl-grid no-padding grid-hfull">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--middle">
+							<span class="middle-text">EMPRESAS RESPONDENTES</span>
+						</div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro1"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro1" placeholder="Filtrar por..">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-01">
+											<input type="checkbox" id="checkdrop-filtro-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-02">
+											<input type="checkbox" id="checkdrop-filtro-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-03">
+											<input type="checkbox" id="checkdrop-filtro-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro2</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro2"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro2" placeholder="-">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-05">
+											<input type="checkbox" id="checkdrop-filtro-05"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-06">
+											<input type="checkbox" id="checkdrop-filtro-06"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-07">
+											<input type="checkbox" id="checkdrop-filtro-07"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-08">
+											<input type="checkbox" id="checkdrop-filtro-08"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mdl-card__supporting-text card-body padding-top-0">
+				<div id="chartContainer14"></div>
+			</div>
+		</div>
+
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-16 margin-top-15 bottom-0">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<div class="mdl-grid no-padding grid-hfull">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--middle">
+							<span class="middle-text">PERCENTUAL DE ADERÊNCIA</span>
+						</div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro1"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro1" placeholder="Filtrar por..">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-01">
+											<input type="checkbox" id="checkdrop-filtro-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-02">
+											<input type="checkbox" id="checkdrop-filtro-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-03">
+											<input type="checkbox" id="checkdrop-filtro-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro2</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro2"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro2" placeholder="-">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-05">
+											<input type="checkbox" id="checkdrop-filtro-05"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-06">
+											<input type="checkbox" id="checkdrop-filtro-06"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-07">
+											<input type="checkbox" id="checkdrop-filtro-07"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-08">
+											<input type="checkbox" id="checkdrop-filtro-08"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<div id="chartContainer15" style="height:540px"></div>
+			</div>
+		</div>
+
+	</div>
+	<div class="mdl-cell mdl-cell--6-col">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-16 zindex-0">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<div class="mdl-grid no-padding grid-hfull">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--middle">
+							<span class="middle-text">PERCENTUAIS</span>
+						</div>
+						<div class="mdl-cell mdl-cell--3-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<input class="mdl-textfield__input" type="text" id="filtro7" placeholder="Setor" readonly tabindex="-1">
+								<ul for="filtro7" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+									<li class="mdl-menu__item">Tecnologia</li>
+									<li class="mdl-menu__item">Agronegócio</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<input class="mdl-textfield__input" type="text" id="filtro8" placeholder="Filtrar por..." readonly tabindex="-1">
+								<ul for="filtro8" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+									<li class="mdl-menu__item">Filtro 1</li>
+									<li class="mdl-menu__item">Filtro 2</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding bottom-30">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-responsive table-striped dashboard-administador-table">
+					<thead>
+						<tr>
+							<th class="">Módulo</th>
+							<th class="">% Média geral</th>
+							<th class="">% ADERÊNCIA EMPRESA</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="">SUPORTE OGANIZACIONAL</td>
+							<td class="">1.0</td>
+							<td class="">40.55%</td>
+						</tr>
+						<tr>
+							<td class="">CONTROLE DE TABAGISMO</td>
+							<td class="">0.3</td>
+							<td class="">22.22%</td>
+						</tr>
+						<tr>
+							<td class="">NUTRIÇÃO</td>
+							<td class="">3.0</td>
+							<td class="">41.85%</td>
+						</tr>
+						<tr>
+							<td class="">PRESSÃO ALTA</td>
+							<td class="">1.0</td>
+							<td class="">40.55%</td>
+						</tr>
+						<tr>
+							<td class="">ATIVIDADE FÍSICA</td>
+							<td class="">0.3</td>
+							<td class="">22.22%</td>
+						</tr>
+						<tr>
+							<td class="">CONTROLE DE PESO</td>
+							<td class="">3.0</td>
+							<td class="">41.85%</td>
+						</tr>
+						<tr>
+							<td class="">GERENCIAMENTO DE ESTRESSE</td>
+							<td class="">1.0</td>
+							<td class="">40.55%</td>
+						</tr>
+						<tr>
+							<td class="">DEPRESSÃO</td>
+							<td class="">0.3</td>
+							<td class="">22.22%</td>
+						</tr>
+						<tr>
+							<td class="">COLESTEROL ALTO</td>
+							<td class="">3.0</td>
+							<td class="">41.85%</td>
+						</tr>	
+						<tr>
+							<td class="">DIABETES</td>
+							<td class="">1.0</td>
+							<td class="">40.55%</td>
+						</tr>	
+						<tr>
+							<td class="">APOIO À AMAMENTAÇÃO</td>
+							<td class="">0.3</td>
+							<td class="">22.22%</td>
+						</tr>
+						<tr>
+							<td class="">SAÚDE E SEGURANÇA DO TRABALHO</td>
+							<td class="">3.0</td>
+							<td class="">41.85%</td>
+						</tr>
+						<tr>
+							<td class="">VACINAÇÃO</td>
+							<td class="">1.0</td>
+							<td class="">40.55%</td>
+						</tr>
+						<tr>
+							<td class="">RECURSOS COMUNITÁRIOS</td>
+							<td class="">0.3</td>
+							<td class="">22.22%</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>TOTAL</span>
+					</div>
+					<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>44,7%</span>
+					</div>
+					<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>23,78%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20 margin-top-15">	
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<div class="mdl-grid no-padding grid-hfull">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<span class="middle-text">EMPRESAS POSSUI PLANO DE SAÚDE?</span>
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro1"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro1" placeholder="Filtrar por...">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-01">
+											<input type="checkbox" id="checkdrop-filtro-01"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-02">
+											<input type="checkbox" id="checkdrop-filtro-02"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-03">
+											<input type="checkbox" id="checkdrop-filtro-03"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-04">
+											<input type="checkbox" id="checkdrop-filtro-04"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Filtro3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield arrow-textfield">
+								<label class="mdl-textfield__label label-sem-barra" for="filtro2"></label>
+								<input class="mdl-textfield__input box-drop-js" type="text" id="filtro2" placeholder="-">
+							</div>
+							<div class="box-drop">
+								<ul class="ul-drop">
+									<li class="">
+										<input class="mdl-textfield__input" type="text" placeholder="Pesquisa">
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-05">
+											<input type="checkbox" id="checkdrop-filtro-05"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Selecionar todos</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-06">
+											<input type="checkbox" id="checkdrop-filtro-06"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt1</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-07">
+											<input type="checkbox" id="checkdrop-filtro-07"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt2</span>
+										</label>
+									</li>
+									<li class="">
+										<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect margin-top-20" for="checkdrop-filtro-08">
+											<input type="checkbox" id="checkdrop-filtro-08"  class="mdl-checkbox__input">
+											<span class="mdl-checkbox__label">Opt3</span>
+										</label>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="mdl-card__supporting-text card-body padding-top-0">
+				<div id="chartContainer16"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing bottom-0">
+	<div class="mdl-cell mdl-cell--12-col">	
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+				<div class="mdl-card__supporting-text card-header text-align-left">
+					<div class="mdl-grid no-padding grid-hfull">
+						<div class="mdl-grid mdl-cell--12-col no-padding">
+							<div class="mdl-cell mdl-cell--5-col mdl-cell--middle">
+								<span class="middle-text">HISTOGRAMA</span>
+							</div>
+							<div class="mdl-cell mdl-cell--3-col mdl-cell--middle">
+								<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+									<label class="mdl-textfield__label label-sem-barra"></label>
+									<input class="mdl-textfield__input" type="text" id="filtro9" placeholder="Setor" readonly tabindex="-1">
+									<ul for="filtro9" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+										<li class="mdl-menu__item">Tecnologia</li>
+										<li class="mdl-menu__item">Agronegócio</li>
+									</ul>
+								</div>
+							</div>
+							<div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+								<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+									<label class="mdl-textfield__label label-sem-barra"></label>
+									<input class="mdl-textfield__input" type="text" id="filtro10" placeholder="Filtrar por..." readonly tabindex="-1">
+									<ul for="filtro10" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+										<li class="mdl-menu__item">Filtro 1</li>
+										<li class="mdl-menu__item">Filtro 2</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mdl-card__supporting-text card-body no-padding mixchart-overflow">
+					<div class="mixchart" style="display: block; margin: 0 auto">
+						<div id="chartContainer17" style="height:540px"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mdl-grid mdl-grid--spacing bottom-40">	
+		<div class="mdl-cell mdl-cell--12-col">
+			<div class="mdl-card mdl-shadow--8dp card-dashboard padding-16">
+				<div class="mdl-card__supporting-text card-header text-align-left">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--8-col mdl-cell--middle">
+							<span class="middle-text">PERCENTUAIS</span>
+						</div>
+						<div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<input class="mdl-textfield__input" type="text" id="filtro11" placeholder="Setor" readonly tabindex="-1">
+								<ul for="filtro11" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+									<li class="mdl-menu__item">Tecnologia</li>
+									<li class="mdl-menu__item">Agronegócio</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--2-col mdl-cell--middle">
+							<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth">
+								<label class="mdl-textfield__label label-sem-barra"></label>
+								<input class="mdl-textfield__input" type="text" id="filtro12" placeholder="Filtrar por..." readonly tabindex="-1">
+								<ul for="filtro12" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+									<li class="mdl-menu__item">Filtro 1</li>
+									<li class="mdl-menu__item">Filtro 2</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="mdl-card__supporting-text card-body no-padding">
+					<table class="mdl-data-table mdl-js-data-table table-dashboard-respondent-percent table-responsive table-striped">
+						<thead>
+							<tr>
+								<th class="text-align-center">Módulo</th>
+								<th></th>
+								<th>Questão</th>
+								<th>Descrição</th>
+								<th>% MÉDIA</th>
+								<th>% ADERÊNCIA</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-suporte-organizacional.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 1</td>
+								<td>A prática cotidiana para…</td>
+								<td>1.0</td>
+								<td>40.55%</td>
+							</tr>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-suporte-organizacional.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 2</td>
+								<td>Percebemos, cada …</td>
+								<td>0.3</td>
+								<td>22.22%</td>
+							</tr>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-suporte-organizacional.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 3</td>
+								<td>A prática cotidiana prova…</td>
+								<td>3.0</td>
+								<td>41.85%</td>
+							</tr>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-suporte-organizacional.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 4</td>
+								<td>A prática cotidiana prova…</td>
+								<td>1.1</td>
+								<td>33.65%</td>
+							</tr>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-tabagismo.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 5</td>
+								<td>A prática cotidiana prova…</td>
+								<td>2.6</td>
+								<td>44.66%</td>
+							</tr>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-tabagismo.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 6</td>
+								<td>A prática cotidiana prova…</td>
+								<td>2.1</td>
+								<td>74.21%</td>
+							</tr>
+							<tr>
+								<td class="text-align-center">{% include icones/ic-tabagismo.svg %}</td>
+								<td>SUPORTE OGANIZACIONAL</td>
+								<td>Questão 7</td>
+								<td>A prática cotidiana prova…</td>
+								<td>1.7</td>
+								<td>59.35%</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="table-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--8-col">
+							<span>TOTAL</span>
+						</div>
+						<div class="mdl-cell mdl-cell--2-col text-align-right">
+							<span>44.7%</span>
+						</div>
+						<div class="mdl-cell mdl-cell--2-col text-align-center">
+							<span>23.78%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+
+<div class="container">
+  <div class="content"></div>
+</div>

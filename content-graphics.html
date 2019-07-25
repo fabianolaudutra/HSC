@@ -1,0 +1,546 @@
+--- 
+layout: default 
+title: Gráficos
+permalink: "/dashboard-graphics/" 
+classes: cadastro
+---
+
+<section class="background-gray margin-top-40">
+	<div class="mdl-grid mdl-grid--spacing">
+		<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet margin-top-20 margin-bottom-0">
+			<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth text-field-ghp">
+				<label for="setor-gph" class="mdl-textfield__label label-sem-barra">Setor</label>
+				<input class="mdl-textfield__input" type="text" id="setor-gph" placeholder="Selecionar Setor" readonly tabindex="-1">
+				<!-- <span class="icon-select">{% include icones/ic-dropdown.svg %}</span> -->
+				<ul for="setor-gph" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+					<li class="mdl-menu__item">TODOS</li>
+					<li class="mdl-menu__item">A</li>
+					<li class="mdl-menu__item">B</li>
+				</ul>
+			</div>
+		</div> 
+		<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet margin-top-20 margin-bottom-0">
+			<div class="mdl-textfield mdl-js-textfield getmdl-select getmdl-select__fullwidth text-field-ghp">
+				<label for="estado-gph" class="mdl-textfield__label label-sem-barra">Estado</label>
+				<input class="mdl-textfield__input" type="text" id="estado-gph" placeholder="Selecionar Estado" readonly tabindex="-1">
+				<!-- <span class="icon-select">{% include icones/ic-dropdown.svg %}</span> -->
+				<ul for="estado-gph" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+					<li class="mdl-menu__item">TODOS</li>
+					<li class="mdl-menu__item">MG</li>
+					<li class="mdl-menu__item">BA</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="mdl-grid mdl-grid--spacing">
+		<div class="mdl-cell mdl-cell--12-col text-align-center">
+			<h1 class="title-gph">Pontuação Média Total: 75%</h1>
+		</div>
+	</div>
+
+	<div class="mdl-grid mdl-grid--spacing">
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+			<div class="card-graphy">
+				<div id="chartContainer"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Média do campo</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>75%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+			<div class="card-graphy">
+				<div id="chartContainer2"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Média do campo</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>75%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+			<div class="card-graphy">
+				<div id="chartContainer3"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Média do campo</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>75%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone margin-top-9">
+			<div class="card-graphy">
+				<div id="chartContainer4"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Média do campo</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>75%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone margin-top-9">
+			<div class="card-graphy">
+				<div id="chartContainer5"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Média do campo</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>75%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone margin-top-9">
+			<div class="card-graphy">
+				<div id="chartContainer6"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Média do campo</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>75%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+		<div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone margin-top-9" style="width: 600px;overflow-x: auto;    overflow-y: hidden;">
+			<div class="card-graphy" style="width:1000px">
+				<div id="chartContainer7"></div>
+				<div class="card-footer">
+					<div class="mdl-grid no-padding">
+						<div class="mdl-cell mdl-cell--7-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+							<span>Teste</span>
+						</div>
+						<div class="mdl-cell mdl-cell--5-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+							<span>100%</span>
+						</div>
+					</div>
+				</div> 
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="mdl-grid mdl-grid--spacing mdl-grid--spacing margin-top-25">
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<span class="middle-text margin-left-20">Cultura Organizacional</span>	
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-striped">
+					<thead>
+						<tr>
+							<th class="text-align-center">Questões</th>
+							<th class="text-align-left">Temas</th>
+							<th class="text-align-center">Pontos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center">1</td>
+							<td class="text-align-left">IDENTIDADE, VALORES E LIDERANÇA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">2</td>
+							<td class="text-align-left">AMBIENTE PSICOSSOCIAL DO TRABALHO</td>
+							<td class="text-align-center info-success">100%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">3</td>
+							<td class="text-align-left">MISSÃO, VISÃO E VALORES</td>
+							<td class="text-align-center info-danger">50%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">4</td>
+							<td class="text-align-left">CONDUTA ÉTICA E CORRUPÇÃO</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">5</td>
+							<td class="text-align-left">INCLUSÃO, PARTICIPAÇÃO, TRANSPARÊNCIA COM STAKEHOLDERS </td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">6</td>
+							<td class="text-align-left">ENVOLVIMENTO COM A COMUNIDADE</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>Média do campo</span>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>75%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+	</div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<span class="middle-text margin-left-20">PESSOAS TRANSFORMADORAS</span>	
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-striped">
+					<thead>
+						<tr>
+							<th class="text-align-center">Questões</th>
+							<th class="text-align-left">Temas</th>
+							<th class="text-align-center">Pontos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center">20</td>
+							<td class="text-align-left">DESENVOLVIMENTO HUMANO, CRESCIMENTO PESSOAL E VISÃO DE FUTURO</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">21</td>
+							<td class="text-align-left">COMPROMETIMENTO E PROATIVIDADE COM CAUSAS COMUNITÁRIAS</td>
+							<td class="text-align-center info-success">100%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">22</td>
+							<td class="text-align-left">QUALIDADE DE VIDA DA FAMÍLIA E COMUNIDADE</td>
+							<td class="text-align-center info-danger">50%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">23</td>
+							<td class="text-align-left">RESPEITO E VALORIZAÇÃO DA DIVERSIDADE</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">24</td>
+							<td class="text-align-left">CONSUMO CONSCIENTE</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>Média do campo</span>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>75%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col text-align-center legend-gph">
+		<h2><span class="legend-box legend-box-red"></span> 0 a 50% - É necessário reformular práticas e processos </h2>
+		<h2><span class="legend-box legend-box-yellow"></span> 51 a 75% - Práticas e processos podem ser reformulados </h2>
+		<h2><span class="legend-box legend-box-green"></span> 76 a 100% - Práticas e processos devem ser mantidos e observados </h2>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<span class="middle-text margin-left-20">Cultura Organizacional</span>	
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-striped">
+					<thead>
+						<tr>
+							<th class="text-align-center">Questões</th>
+							<th class="text-align-left">Temas</th>
+							<th class="text-align-center">Pontos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center">1</td>
+							<td class="text-align-left">SUPORTE OGANIZACIONAL</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">2</td>
+							<td class="text-align-left">CONTROLE DE TABAGISMO</td>
+							<td class="text-align-center info-success">100%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">3</td>
+							<td class="text-align-left">NUTRIÇÃO</td>
+							<td class="text-align-center info-danger">50%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">4</td>
+							<td class="text-align-left">PRESSÃO ALTA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">5</td>
+							<td class="text-align-left">ATIVIDADE FÍSICA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">6</td>
+							<td class="text-align-left">CONTROLE DE PESO</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>Média do campo</span>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>75%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+	</div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<span class="middle-text margin-left-20">Cultura Organizacional</span>	
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-striped">
+					<thead>
+						<tr>
+							<th class="text-align-center">Questões</th>
+							<th class="text-align-left">Temas</th>
+							<th class="text-align-center">Pontos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center">1</td>
+							<td class="text-align-left">SUPORTE OGANIZACIONAL</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">2</td>
+							<td class="text-align-left">CONTROLE DE TABAGISMO</td>
+							<td class="text-align-center info-success">100%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">3</td>
+							<td class="text-align-left">NUTRIÇÃO</td>
+							<td class="text-align-center info-danger">50%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">4</td>
+							<td class="text-align-left">PRESSÃO ALTA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">5</td>
+							<td class="text-align-left">ATIVIDADE FÍSICA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">6</td>
+							<td class="text-align-left">CONTROLE DE PESO</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>Média do campo</span>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>75%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col text-align-center legend-gph">
+		<h2><span class="legend-box legend-box-red"></span> 0 a 50% - É necessário reformular práticas e processos </h2>
+		<h2><span class="legend-box legend-box-yellow"></span> 51 a 75% - Práticas e processos podem ser reformulados </h2>
+		<h2><span class="legend-box legend-box-green"></span> 76 a 100% - Práticas e processos devem ser mantidos e observados </h2>
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<span class="middle-text margin-left-20">Cultura Organizacional</span>	
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-striped">
+					<thead>
+						<tr>
+							<th class="text-align-center">Questões</th>
+							<th class="text-align-left">Temas</th>
+							<th class="text-align-center">Pontos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center">1</td>
+							<td class="text-align-left">SUPORTE OGANIZACIONAL</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">2</td>
+							<td class="text-align-left">CONTROLE DE TABAGISMO</td>
+							<td class="text-align-center info-success">100%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">3</td>
+							<td class="text-align-left">NUTRIÇÃO</td>
+							<td class="text-align-center info-danger">50%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">4</td>
+							<td class="text-align-left">PRESSÃO ALTA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">5</td>
+							<td class="text-align-left">ATIVIDADE FÍSICA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">6</td>
+							<td class="text-align-left">CONTROLE DE PESO</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>Média do campo</span>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>75%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+	</div>
+	<div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+		<div class="mdl-card mdl-shadow--8dp card-dashboard padding-20">
+			<div class="mdl-card__supporting-text card-header text-align-left">
+				<span class="middle-text margin-left-20">Cultura Organizacional</span>	
+			</div>
+			<div class="mdl-card__supporting-text card-body no-padding">
+				<table class="mdl-data-table mdl-js-data-table table-dashboard-percent table-striped">
+					<thead>
+						<tr>
+							<th class="text-align-center">Questões</th>
+							<th class="text-align-left">Temas</th>
+							<th class="text-align-center">Pontos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="text-align-center">1</td>
+							<td class="text-align-left">SUPORTE OGANIZACIONAL</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">2</td>
+							<td class="text-align-left">CONTROLE DE TABAGISMO</td>
+							<td class="text-align-center info-success">100%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">3</td>
+							<td class="text-align-left">NUTRIÇÃO</td>
+							<td class="text-align-center info-danger">50%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">4</td>
+							<td class="text-align-left">PRESSÃO ALTA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">5</td>
+							<td class="text-align-left">ATIVIDADE FÍSICA</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						<tr>
+							<td class="text-align-center">6</td>
+							<td class="text-align-left">CONTROLE DE PESO</td>
+							<td class="text-align-center info-alert">75%</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="table-footer">
+				<div class="mdl-grid no-padding">
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+						<span>Média do campo</span>
+					</div>
+					<div class="mdl-cell mdl-cell--6-col mdl-cell--2-col-tablet mdl-cell--1-col-phone text-align-right">
+						<span>75%</span>
+					</div>
+				</div>
+			</div> 
+		</div>
+
+	</div>
+</div>
+
+<div class="mdl-grid mdl-grid--spacing mdl-grid--spacing">
+	<div class="mdl-cell mdl-cell--12-col text-align-center legend-gph">
+		<h2><span class="legend-box legend-box-red"></span> 0 a 50% - É necessário reformular práticas e processos </h2>
+		<h2><span class="legend-box legend-box-yellow"></span> 51 a 75% - Práticas e processos podem ser reformulados </h2>
+		<h2><span class="legend-box legend-box-green"></span> 76 a 100% - Práticas e processos devem ser mantidos e observados </h2>
+	</div>
+</div>
